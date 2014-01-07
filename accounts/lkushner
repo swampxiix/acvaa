@@ -1,0 +1,77 @@
+(dp1
+S'show_numbers'
+p2
+S'hide'
+p3
+sS'city'
+p4
+S'Coolidge'
+p5
+sS'fax'
+p6
+S''
+sS'roles'
+p7
+(lp8
+S'diplomate'
+p9
+asS'zip'
+p10
+S' '
+sS'country'
+p11
+S'Antigua '
+p12
+sS'mi'
+p13
+S'I.'
+p14
+sS'state'
+p15
+S'Antigua/Barbuda '
+p16
+sS'show_email'
+p17
+S'both'
+p18
+sS'phone'
+p19
+S'268-784-0207'
+p20
+sS'show_address'
+p21
+S'both'
+p22
+sS'addr2'
+p23
+S'Box W-1451 '
+p24
+sS'sn'
+p25
+S'Kushner'
+p26
+sS'addr1'
+p27
+S'college of vet med American University of Antigua'
+p28
+sS'vcode'
+p29
+S'223846298218'
+p30
+sS'degrees'
+p31
+S'DVM'
+p32
+sS'password'
+p33
+S'4ed8464bea181f13686d2d722c3e132bcc12c8c9'
+p34
+sS'email'
+p35
+S'lkushner@auamed.net'
+p36
+sS'fn'
+p37
+S'Lynne '
+p38
+s.

@@ -1,0 +1,77 @@
+(dp1
+S'show_numbers'
+p2
+S'both'
+p3
+sS'city'
+p4
+S'University of Pretoria'
+p5
+sS'fax'
+p6
+S'0027125298307'
+p7
+sS'roles'
+p8
+(lp9
+S'diplomate'
+p10
+asS'zip'
+p11
+S''
+sS'country'
+p12
+S'South Africa'
+p13
+sS'mi'
+p14
+S''
+sS'show_address'
+p15
+S'all'
+p16
+sS'show_email'
+p17
+S'both'
+p18
+sS'phone'
+p19
+S'0027125298200'
+p20
+sS'state'
+p21
+S'Onderstepoort'
+p22
+sS'addr2'
+p23
+S'Faculty of Veterinary Sciences'
+p24
+sS'sn'
+p25
+S'Rioja Garcia'
+p26
+sS'addr1'
+p27
+S'Department of Companion Animal Clinical Studies'
+p28
+sS'vcode'
+p29
+S'467532563911'
+p30
+sS'degrees'
+p31
+S'DVM, DVSc, PhD, DACVA'
+p32
+sS'password'
+p33
+S'd130c191c0bc5a8ef12b7e9c905c1b8bf63dfe5b'
+p34
+sS'email'
+p35
+S'eva.riojagarcia@up.ac.za'
+p36
+sS'fn'
+p37
+S'Eva'
+p38
+s.

@@ -1,0 +1,38 @@
+(dp1
+S'username'
+p2
+S'sberry'
+p3
+sS'description'
+p4
+S'The AVA Spring 2011 Meeting will be held in Bari, Italy from April 13th (training day) until April 15th, 2011. \r\n\r\nThe registration for the 2011 AVA Spring Meeting is officially open!! \r\n\r\nThe deadline for the early registration is February 28th.    \r\n\r\nThis is the link for the <a href ="http://www.avabari2011.com/doc/registration_form.pdf">registration form </a>'
+p5
+sS'title'
+p6
+S'AVA Spring 2011 Meeting'
+p7
+sS'orig_id'
+p8
+S'1302652800'
+p9
+sS'link_text'
+p10
+S'AVA Spring Meeting'
+p11
+sS'visibility'
+p12
+S'all'
+p13
+sS'date'
+p14
+(lp15
+S'4'
+aS'13'
+p16
+aS'2011'
+p17
+asS'link_url'
+p18
+S'http://www.avabari2011.com'
+p19
+s.

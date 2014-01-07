@@ -1,0 +1,137 @@
+(dp1
+S'job_dept'
+p2
+S'Department of Clinical Studies, Section of Anesthesia'
+p3
+sS'contact1_phone'
+p4
+S'(215) 898-7213'
+p5
+sS'exp_tuple'
+p6
+ctime
+struct_time
+p7
+((I2011
+I8
+I2
+I0
+I0
+I0
+I1
+I214
+I0
+t(dtRp8
+sS'cv_city'
+p9
+S'Philadelphia'
+p10
+sS'web_link_text'
+p11
+S''
+sS'contact1_name'
+p12
+S'Dr. Larenza'
+p13
+sS'cv_phone'
+p14
+S'(215) 898-7213'
+p15
+sS'id'
+p16
+S'4'
+sS'category'
+p17
+S'Institution, Industry or Public Practice'
+p18
+sS'cv_zip'
+p19
+S'19104-6010'
+p20
+sS'job_inst'
+p21
+S'University of Pennsylvania School of Veterinary Medicine'
+p22
+sS'contact2_email'
+p23
+S''
+sS'contact2_name'
+p24
+S''
+sS'posted'
+p25
+g7
+((I2010
+I12
+I2
+I16
+I50
+I0
+I3
+I336
+I0
+t(dtRp26
+sS'cv_fax'
+p27
+S''
+sS'job_title'
+p28
+S'Lecturer Position in Small Animal Anesthesiology'
+p29
+sS'contact2_phone'
+p30
+S''
+sS'description'
+p31
+S'The University of Pennsylvania School of Veterinary Medicine, Department of\r\nClinical Studies, Section of Anesthesia invites applications for a\r\nrenewable Lecturer position in Small Animal Anesthesia. The position must\r\nbe filled by July 2011.\r\n\r\nLecturers in anesthesia have 70-80% clinical commitment, and their primary\r\nresponsibilities are clinical teaching and clinical service.  However, time\r\noff clinics is negotiable and may be extended  if the candidate has\r\nspecific interest in pursuing clinical research. Successful candidates will\r\nenjoy a wealth of opportunities in providing clinical service in a very\r\nactive academic teaching hospital, and in pursuing clinical research in a\r\ncollaborative environment with a high case load.  \r\n\r\nCandidates must have a veterinary degree, and residency training in\r\nVeterinary Anesthesia.  Preference will be given to applicants who are\r\nboard certified by the ACVA or ECVAA, or who are eligible to take the\r\nAnesthesia certification examination.  Salaries will be commensurate with\r\nprofessional and academic credentials and experience.\r\n\r\nApplicants should submit a letter of intent (including a statement of\r\npersonal goals), curriculum vitae, and the names of three references to: \r\n\r\nM. Paula Larenza, \r\nDVM, Dr.med.vet, DiplECVAA\r\nDepartment of Clinical Studies-Philadelphia, \r\nMJR VHUP, University of Pennsylvania, \r\n3900 Delancey Street, Philadelphia, \r\nPA  19104-6010.  \r\n\r\nFor further information, please contact Dr. Larenza, at (215) 898-7213 or \r\n<a href="mailto:larenza@vet.upenn.edu">larenza@vet.upenn.edu</a>.\r\n\r\nThe University of Pennsylvania is an "EOE".  Minorities/Females/Individuals\r\nwith Disabilities/Veterans are encouraged to apply. \r\n'
+p32
+sS'cv_instructions'
+p33
+S''
+sS'cv_title'
+p34
+S'DVM, Dr.med.vet, DiplECVAA'
+p35
+sS'expires'
+p36
+(lp37
+S'8'
+aS'2'
+aS'2011'
+p38
+asS'cv_name'
+p39
+S'M. Paula Larenza'
+p40
+sS'cv_state'
+p41
+S'PA'
+p42
+sS'cv_addr1'
+p43
+S'Department of Clinical Studies-Philadelphia '
+p44
+sS'cv_addr3'
+p45
+S'3900 Delancey Street'
+p46
+sS'cv_addr2'
+p47
+S'MJR VHUP, University of Pennsylvania'
+p48
+sS'cv_country'
+p49
+S'USA'
+p50
+sS'cv_email'
+p51
+S'larenza@vet.upenn.edu'
+p52
+sS'web_link_url'
+p53
+S''
+sS'contact1_email'
+p54
+S'larenza@vet.upenn.edu'
+p55
+s.

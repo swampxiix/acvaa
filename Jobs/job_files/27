@@ -1,0 +1,137 @@
+(dp1
+S'job_dept'
+p2
+S'Comparative Anesthesia'
+p3
+sS'contact1_phone'
+p4
+S''
+sS'exp_tuple'
+p5
+ctime
+struct_time
+p6
+((I2011
+I10
+I31
+I0
+I0
+I0
+I0
+I304
+I0
+t(dtRp7
+sS'cv_city'
+p8
+S'St. Paul'
+p9
+sS'web_link_text'
+p10
+S''
+sS'contact1_name'
+p11
+S''
+sS'cv_phone'
+p12
+S'(612) 625-9781'
+p13
+sS'id'
+p14
+S'27'
+p15
+sS'category'
+p16
+S'Institution, Industry or Private Practice'
+p17
+sS'cv_zip'
+p18
+S'55108'
+p19
+sS'job_inst'
+p20
+S'University of Minnesota College of Veterinary Medicine'
+p21
+sS'contact2_email'
+p22
+S''
+sS'contact2_name'
+p23
+S''
+sS'posted'
+p24
+g6
+((I2011
+I5
+I10
+I18
+I35
+I46
+I1
+I130
+I1
+t(dtRp25
+sS'cv_fax'
+p26
+S''
+sS'job_title'
+p27
+S'Clinical service and teaching locum tenens faculty'
+p28
+sS'contact2_phone'
+p29
+S''
+sS'description'
+p30
+S'The University of Minnesota College of Veterinary Medicine invites applications for a short term (9-12 weeks) locum tenens position in Comparative Anesthesia. This is a clinical service and clinical teaching appointment in Anesthesia that is available from July to October 2011.  Primary duties will include participation in the anesthetic case management of patients presented to the Veterinary Medical Center (VMC), and horses and camelids presented to the University of Minnesota Equine Center (UMEC).  Responsibilities will include clinical teaching of fourth year students, interns, and residents assigned to Anesthesia rotations, and consultations with referring DVMs.\r\n\r\nQualifications include: DVM/VMD or equivalent veterinary degree, clinical experience in Anesthesia.  Board certification (ACVA) is essential.\r\n\r\nCommensurate with experience, time commitment, and qualifications.\r\n\r\nStarting date will be when the selected candidate is available'
+p31
+sS'cv_instructions'
+p32
+S'A letter of interest and current CV should be submitted to <a href="mailto:graha040@umn.edu">Dr. Lynelle Graham </a>. Interested candidates should contact Dr. Graham with questions. \r\n'
+p33
+sS'cv_title'
+p34
+S''
+sS'expires'
+p35
+(lp36
+S'10'
+p37
+aS'31'
+p38
+aS'2011'
+p39
+asS'cv_name'
+p40
+S'Lynelle Graham, DVM, MS, Dipl. ACVA'
+p41
+sS'cv_state'
+p42
+S'MN'
+p43
+sS'cv_addr1'
+p44
+S'Department of Veterinary Clinical Sciences'
+p45
+sS'cv_addr3'
+p46
+S'University of Minnesota'
+p47
+sS'cv_addr2'
+p48
+S'College of Veterinary Medicine'
+p49
+sS'cv_country'
+p50
+S'USA'
+p51
+sS'cv_email'
+p52
+S'graha040@umn.edu'
+p53
+sS'web_link_url'
+p54
+S''
+sS'contact1_email'
+p55
+S''
+s.

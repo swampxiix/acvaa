@@ -1,0 +1,138 @@
+(dp1
+S'job_dept'
+p2
+S'Facult\xc3\xa9 de M\xc3\xa9decine V\xc3\xa9t\xc3\xa9rinair'
+p3
+sS'contact1_phone'
+p4
+S'450-773-8521, ext. 54249'
+p5
+sS'exp_tuple'
+p6
+ctime
+struct_time
+p7
+((I2011
+I8
+I2
+I0
+I0
+I0
+I1
+I214
+I0
+t(dtRp8
+sS'cv_city'
+p9
+S'Saint-Hyacinthe'
+p10
+sS'web_link_text'
+p11
+S''
+sS'contact1_name'
+p12
+S'Dr. Patrick Burns'
+p13
+sS'cv_phone'
+p14
+S'(450) 773-8521, ext. 8266'
+p15
+sS'id'
+p16
+S'7'
+sS'category'
+p17
+S'Institution, Industry or Public Practice'
+p18
+sS'cv_zip'
+p19
+S'J2S 7C6'
+p20
+sS'job_inst'
+p21
+S'Centre Hospitalier Universitaire V\xc3\xa9t\xc3\xa9rinaire (CHUV)'
+p22
+sS'contact2_email'
+p23
+S''
+sS'contact2_name'
+p24
+S''
+sS'posted'
+p25
+g7
+((I2010
+I12
+I2
+I16
+I33
+I13
+I3
+I336
+I0
+t(dtRp26
+sS'cv_fax'
+p27
+S'(450) 778-8112'
+p28
+sS'job_title'
+p29
+S'Locum in Anaesthesiology'
+p30
+sS'contact2_phone'
+p31
+S''
+sS'description'
+p32
+S'The Centre hospitalier universitaire v\xc3\xa9t\xc3\xa9rinaire of the Facult\xc3\xa9 de m\xc3\xa9decine v\xc3\xa9t\xc3\xa9rinaire is recruiting a clinical instructor in anaesthesiology for locums or longer periods.\r\n\r\nSalary:\r\nSalary will be based on academic credentials and experience. Emergency services are paid over the regular salary, according to the rules of the CHUV of the Universit\xc3\xa9 de Montr\xc3\xa9al.\r\n\r\nStarting date:\r\nAccording to the candidate\'s availability.\r\n\r\nApplications:\r\nCandidates are invited to send a letter of intent and a curriculum vitae including a copy of their diplomas to:\r\n\r\nDr Pascal Dubreuil,\r\nvice-doyen aux affaires cliniques et professionnelles\r\nUniversit\xc3\xa9 de Montr\xc3\xa9al\r\nFacult\xc3\xa9 de m\xc3\xa9decine v\xc3\xa9t\xc3\xa9rinaire\r\nC.P. 5000\r\nSaint-Hyacinthe (Qu\xc3\xa9bec), J2S 7C6\r\nPhone: (450) 773-8521, ext. 8266\r\nFax: (450) 778-8112\r\nEmail: <a href="mailto:pascal.dubreuil@umontreal.ca">pascal.dubreuil@umontreal.ca</a>\r\nWeb site: <a href="http://www.medvet.umontreal.ca">http://www.medvet.umontreal.ca</a>\r\n\r\nFor more information, please contact\r\nDr. Patrick Burns\r\nat 450-773-8521, ext. 54249\r\nor at <a href="mailto:patrick.burns@umontreal.ca">patrick.burns@umontreal.ca</a>\r\n\r\nDuties :\r\nThe candidate will join a team of faculty professor and clinical instructors. He/she will participate in the daily clinical activities at the CHUV. He/she may also participate in the after hours emergency service during weekends and holidays. The candidate will participate to the scientific activities of the anaesthesiology service including clinical activities, teaching of undergraduate and graduate students and supervision of technical staff.\r\n\r\nRequirements :\r\nDVM degree\r\nPertinent clinical knowledge of anaesthesia.\r\nA specialty board certification or a certificate of residency in anaesthesiology will be favourably considered.\r\nThe selected candidate must obtain a license from the Ordre des medecins veterinaires du Quebec.\r\n\r\nAll qualified candidates are encouraged to apply; however, Canadians and permanent residents will be given priority. L\'Universit\xc3\xa9 de Montr\xc3\xa9al is committed to the principles of Employment Equity and invites applications from all qualified candidates. Women, people of Aboriginal descent, members of visible minorities, and people with disabilities are invited to identify themselves as members of these designated groups on their application. '
+p33
+sS'cv_instructions'
+p34
+S''
+sS'cv_title'
+p35
+S'vice-doyen aux affaires cliniques et professionnelles'
+p36
+sS'expires'
+p37
+(lp38
+S'8'
+aS'2'
+aS'2011'
+p39
+asS'cv_name'
+p40
+S'Dr Pascal Dubreuil'
+p41
+sS'cv_state'
+p42
+S'Qu\xc3\xa9bec'
+p43
+sS'cv_addr1'
+p44
+S'Universit\xc3\xa9 de Montr\xc3\xa9al'
+p45
+sS'cv_addr3'
+p46
+S'C.P. 5000'
+p47
+sS'cv_addr2'
+p48
+S'Facult\xc3\xa9 de m\xc3\xa9decine v\xc3\xa9t\xc3\xa9rinaire'
+p49
+sS'cv_country'
+p50
+S'Canada'
+p51
+sS'cv_email'
+p52
+S'pascal.dubreuil@umontreal.ca'
+p53
+sS'web_link_url'
+p54
+S''
+sS'contact1_email'
+p55
+S'patrick.burns@umontreal.ca.'
+p56
+s.

@@ -1,0 +1,136 @@
+(dp1
+S'job_dept'
+p2
+S'Department of Veterinary Clinical Sciences '
+p3
+sS'contact1_phone'
+p4
+S''
+sS'exp_tuple'
+p5
+ctime
+struct_time
+p6
+((I2011
+I9
+I1
+I0
+I0
+I0
+I3
+I244
+I0
+t(dtRp7
+sS'cv_city'
+p8
+S'St. Paul'
+p9
+sS'web_link_text'
+p10
+S' U of MN Employment Website'
+p11
+sS'contact1_name'
+p12
+S''
+sS'cv_phone'
+p13
+S''
+sS'id'
+p14
+S'2'
+sS'category'
+p15
+S'Institution, Industry or Private Practice'
+p16
+sS'cv_zip'
+p17
+S'55108'
+p18
+sS'job_inst'
+p19
+S'University of Minnesota College of Veterinary Medicine '
+p20
+sS'contact2_email'
+p21
+S''
+sS'contact2_name'
+p22
+S''
+sS'posted'
+p23
+g6
+((I2011
+I5
+I10
+I18
+I32
+I32
+I1
+I130
+I1
+t(dtRp24
+sS'cv_fax'
+p25
+S'(612) 624-0751'
+p26
+sS'job_title'
+p27
+S'Assistant or Associate Clinical Professor in Comparative Anesthesia '
+p28
+sS'contact2_phone'
+p29
+S''
+sS'description'
+p30
+S'The University of Minnesota College of Veterinary Medicine invites applications for an Assistant or Associate Clinical Professor position in Comparative Anesthesia. This is a full-time, non-tenure track appointment in Anesthesia that is available beginning immediately.\r\n\r\nRequirements: Qualifications include: DVM/VMD or equivalent veterinary degree, 3-5 years of clinical experience with an emphasis in anesthesia or critical care, and evidence of outstanding clinical and interpersonal skills. Preference will be given to individuals who are board certified by American College of Veterinary Anesthesiologists (ACVA) or European College of Veterinary Anaesthesia and Analgesia (ECVAA), or American College of Veterinary Emergency and Critical Care (ACVECC), and have significant clinical experience in Anesthesia.\r\n\r\nBegin: Starting date will be when selected candidate is available.\r\n\r\nTo Apply\r\nApplicants MUST apply via the U of MN Employment Website\r\n<a href="https://employment.umn.edu/applicants/Central?quickFind=88034">https://employment.umn.edu/applicants/Central?quickFind=88034</a>\r\nand include their curriculum vitae, a letter of intent, and a list of references.\r\n\r\nIn addition to and separate from the above application process, three (3) separate letters of reference should be sent directly to Margaret V. Root Kustritz, DVM, PhD, DACT (see contact info below).\r\n\r\nLetters of reference should be from individuals knowledgeable of the applicant\'s activities and include assessment of the following:\r\n1) Clinical service\r\n2) Teaching abilities\r\n3) Interpersonal skills\r\n\r\nReview of applications will begin immediately and continue until position is filled.\r\n\r\nMargaret V. Root Kustritz, DVM, PhD, DACT\r\nAssociate Professor and Department Vice-Chair\r\nDepartment of Veterinary Clinical Sciences\r\nCollege of Veterinary Medicine\r\n1352 Boyd Avenue\r\nUniversity of Minnesota\r\nSt. Paul, MN 55108\r\nFax: (612) 624-0751\r\nE-mail: <a href="mailto:rootk001@umn.edu">rootk001@umn.edu</a>\r\n\r\nDuties: Primary duties will include participation in anesthesia case management of small and large animal patients in the <a href="http://www.cvm.umn.edu/vmc/home.html">Veterinary Medical Center </a>; and horses presented to the <a href="http://www.cvm.umn.edu/umec/home.html">Equine Center</a>; teaching fourth year students, interns, and residents assigned to clinical anesthesia rotations; participation in didactic training of students in the DVM curriculum; participation in training programs for anesthesia technicians; provision of anesthesia consultations to faculty, residents, interns, and community veterinarians; participation in clinical teaching laboratories as needed; provision of continuing education to practicing veterinarians; participation in ongoing clinical research programs; and, participation in after-hours anesthesia services. The faculty member will work closely with other Anesthesiology faculty, house officers (residents), and veterinary technicians to achieve a high standard of medical care delivery to patients presented to the VMC. The VMC at the University of Minnesota has a high caseload, generating a great variety of challenging cases for the anesthesia service. The Minneapolis/St. Paul area is consistently rated one of the healthiest places to live in the United States, with an abundance of activities and career opportunities available.\r\n\r\nSalary: Commensurate with experience and qualifications. A generous vacation, sick leave, and benefits package is provided by the University of Minnesota.\r\n\r\nThe University of Minnesota is an equal opportunity educator and employer. '
+p31
+sS'cv_instructions'
+p32
+S'Applicants MUST apply via the <a href="https://employment.umn.edu/applicants/Central?quickFind=88034">U of MN Employment Website</a>\r\nand include their curriculum vitae, a letter of intent, and a list of references.\r\n\r\nIn addition to and separate from the above application process, three (3) separate letters of reference should be sent directly to Margaret V. Root Kustritz, DVM, PhD, DACT (see contact info below).'
+p33
+sS'cv_title'
+p34
+S'Associate Professor and Department Vice-Chair'
+p35
+sS'expires'
+p36
+(lp37
+S'9'
+aS'1'
+aS'2011'
+p38
+asS'cv_name'
+p39
+S'Margaret V. Root Kustritz, DVM, PhD, DACT'
+p40
+sS'cv_state'
+p41
+S'MN'
+p42
+sS'cv_addr1'
+p43
+S'College of Veterinary Medicine, 1352 Boyd Avenue'
+p44
+sS'cv_addr3'
+p45
+S''
+sS'cv_addr2'
+p46
+S'University of Minnesota'
+p47
+sS'cv_country'
+p48
+S'USA'
+p49
+sS'cv_email'
+p50
+S'rootk001@umn.edu'
+p51
+sS'web_link_url'
+p52
+S'https://employment.umn.edu/applicants/Central?quickFind=88034'
+p53
+sS'contact1_email'
+p54
+S''
+s.

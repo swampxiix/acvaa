@@ -1,0 +1,25 @@
+(dp1
+S'username'
+p2
+S'master'
+p3
+sS'date'
+p4
+(lp5
+S'5'
+aS'7'
+aS'2010'
+p6
+asS'description'
+p7
+S'The ACVA written exam will be administered on Friday and Saturday, May 7 and 8, 2010 at the Embassy Suites Lexington in Lexington, KY.'
+p8
+sS'visibility'
+p9
+S'all'
+p10
+sS'title'
+p11
+S'ACVA Written Exam'
+p12
+s.

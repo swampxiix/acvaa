@@ -1,0 +1,76 @@
+(dp1
+S'show_address'
+p2
+S'both'
+p3
+sS'addr2'
+p4
+S'Manor Farm Business Park'
+p5
+sS'addr1'
+p6
+S'Davies Veterinary Specialists'
+p7
+sS'show_numbers'
+p8
+S'hide'
+p9
+sS'city'
+p10
+S'Higham Gobion'
+p11
+sS'zip'
+p12
+S'SG5 3HR'
+p13
+sS'state'
+p14
+S'Hertfordshire'
+p15
+sS'degrees'
+p16
+S'MA VetMB MRCVS'
+p17
+sS'email'
+p18
+S'eac@vetspecialists.co.uk'
+p19
+sS'vcode'
+p20
+S'453951113512'
+p21
+sS'fax'
+p22
+S''
+sS'show_email'
+p23
+S'all'
+p24
+sS'phone'
+p25
+S''
+sS'password'
+p26
+S'34f98fdeb8ca91ac33d3e8ca276e8522d851d596'
+p27
+sS'fn'
+p28
+S'Elizabeth'
+p29
+sS'roles'
+p30
+(lp31
+S'diplomate'
+p32
+asS'country'
+p33
+S'United Kingdom'
+p34
+sS'mi'
+p35
+S''
+sS'sn'
+p36
+S'Armitage-Chan'
+p37
+s.
