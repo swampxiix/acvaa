@@ -6,7 +6,7 @@ COMFILE = os.path.join(COMDIR, 'committees.pick')
 
 STANDING_KEYS = ['Credentials Committee','Exam Committee','Committee on Education','Appeals Committee','Annual and 5-Year ABVS Report Committee','Committee on Residency Training','Multiple Choice Exam Committee','ACVA-AVTA Liaison Committee','ACVA Website Committee','Annual Meeting Planning Committee','ACVA Foundation Committee']
 ANNUAL_KEYS =['Nominating Committee', 'Resident Abstract Awards Committee',]
-ADHOC_KEYS = ['Marketing the ACVA', 'Exam Review Committee','Re-Certification Committee','Society Committee','Public Outreach Committee']
+ADHOC_KEYS = ['Essay Questions Bank Committee', 'Exam Review Committee', 'Practitioner Certificate Committee', 'Public Outreach Committee', 'Re-Certification Committee', 'Society Committee',]
 OTHER_KEYS = ['ABVS Representative','ABVS Alternate','ACVIM Collaborative Listserve Representatives','ACVS Liaison','NAVC Liaison','AVMA Liaison',]
 
 def getCommittees():

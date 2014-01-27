@@ -19,7 +19,6 @@ class Template_Main(Page):
         self.writeln('<link rel="stylesheet" href="/c/acva.css" type="text/css">')
 
     def writeJavaScript(self):
-#        self.writeln('<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>')
         self.writeln('<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>')
         self.writeln('<script type="text/javascript" src="/js/jquery.cookie.js"></script>')
         self.writeln('<script type="text/javascript" src="/js/acva.js"></script>')
@@ -39,16 +38,6 @@ class Template_Main(Page):
         wr('<div id="yui-main">')
         wr('<div class="yui-b">')
         wr('<div class="yui-g">')
-#        if IS_LOGGED_IN:
-#            un = self.request().cookies().get('username')
-#            wr('<h3>Welcome back.</h3>')
-#            wr('<P>You are currently logged in as <b>%s</b>. Among other things, you can <a href="Account">access your account</a> or <a href="Logout">log out</a>.</P>' % (un))
-#        else:
-#        if not IS_LOGGED_IN: # MOVED TO HORIZONTAL HEADER AREA see writeGlobalNav()
-#            wr('<div class="sb"><div class="st">')
-#            self.render_login_form()
-#            wr('</div></div>')
-
         self.writeContent()
         wr('</div><!-- .yui-g -->')
         wr('</div><!-- .yui-b -->')
@@ -92,6 +81,10 @@ class Template_Main(Page):
         else:
             self.render_login_form()
         wr('<a href="/Index" title="ACVAA Homepage"><img src="/g/acva.png" alt="acvaa.org" width="172" height="32" border="0"></a>')
+
+        # Link to Facebook
+        wr('<a href="https://www.facebook.com/AmericanCollegeVeterinaryAnesthesiologists"><img src="/g/facebook.png" alt="Facebook" title="Facebook" border="0"></a>')
+
         wr('</div><!-- #doc2 .yui-t1 -->')
         wr('</div><!-- #whitestripe -->')
         wr('</div><!-- #stripes -->')
@@ -120,6 +113,7 @@ class Template_Main(Page):
         wr('<span style="color: #324150; font-weight: bold;">Standards</span>')
         wr('<a style="padding-left: 5px;" href="/docs/Position_Statements" class="menu_link">Position Statements</a>')
         wr('<a style="padding-left: 5px;" href="/docs/ACVA_Training_Standards_2009.doc" class="menu_link">Residency Training Standards</a>')
+        wr('<a href="mailto:execdir@acvaa.org" class="menu_link">Need Help? Contact Us.</a>')
         wr('</div>')
         wr('</div>')
 
@@ -150,8 +144,6 @@ class Template_Main(Page):
             wr('<a href="/Account" class="menu_link">Your Account</a>')
             wr('<a href="/Annual" class="menu_link">2012 Annual Meeting</a>')
             wr('<a href="/Action" class="menu_link">Action Items</a>')
-#            if ISA:
-#                wr('<a href="/Events" class="menu_link">Manage Events</a>')
             wr('<a href="/BOD" class="menu_link">Board of Directors</a>')
             wr('<a href="/Committees" class="menu_link">Committees</a>')
             wr('<a href="/Reports" class="menu_link">Annual Reports</a>')
@@ -193,34 +185,16 @@ class Template_Main(Page):
         wr('</div>')
         wr('<div class="menu_links">')
         wr('<a href="/Owners" class="menu_link">Care for your Pet</a>')
-#        wr('<a href="/Locator" class="menu_link">Find a Doctor</a>')
         wr('<a href="/Locator" class="menu_link">Find an Anesthesiologist</a>')
         wr('</div>')
         wr('</div>')
 
         wr('<a href="/Links" class="menu_link mlm">Links to Other Sites</a>')
 
-        wr('<div class="menu_section">')
-        wr('<a href="https://www.facebook.com/AmericanCollegeVeterinaryAnesthesiologists"><img src="/g/facebook.png" alt="Facebook" title="Facebook" border="0"></a>')
-        wr('</div>')
-
-
         if IS_LOGGED_IN:
             wr('<a href="/Logout" class="menu_link mlm">Log Out</a>')
 
         wr('</div><!-- .yui-b -->')
-
-#        g = self.request().cookies().get('g')
-#        if g == 'd':
-#            if (IS_LOGGED_IN and IS_DIP) or ISA:
-#                self.render_dipl_menu()
-#        if g == 'r':
-#            if (IS_LOGGED_IN and (IS_RES or IS_DIP)) or ISA:
-#                self.render_resd_menu()
-#        if (not g) or g == 'v':
-#            self.render_vet_menu()
-#        if (not g) or g == 'p':
-#            self.render_owner_menu()
 
 
     def writeContent(self):
@@ -230,7 +204,7 @@ class Template_Main(Page):
         wr = self.writeln
         wr('<div id="ft" role="contentinfo">')
         wr('<p>Copyright &copy; 1995&ndash;%s American College of Veterinary Anesthesia and Analgesia with all rights reserved.<br />' % (get_year()))
-        wr('<a href="Terms">Terms of Use</a> &middot; <a href="mailto:execdir@acva.org">Contact</a></p>')
+        wr('<a href="Terms">Terms of Use</a> &middot; <a href="mailto:execdir@acvaa.org">Need Help? Contact Us.</a></p>')
         wr('</div><!-- #ft -->')
 
 ###############################################################################

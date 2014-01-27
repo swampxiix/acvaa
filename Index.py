@@ -24,7 +24,7 @@ class Index (Template_Main):
 
         wr('<span style="margin-right: 40px;">')
         if IS_DIP or IS_RES:
-            wr('<a href="http://www3.interscience.wiley.com/journal/118516519/home" title="Journal"><img src="/g/journal.jpg" width="200" height="169" alt="Journal" border="0" /></a>')
+            wr('<a href="http://onlinelibrary.wiley.com/journal/10.1111/%28ISSN%291467-2995" title="Journal"><img src="/g/journal.jpg" width="200" height="169" alt="Journal" border="0" /></a>')
         else:
             wr('<a href="Foundation" title="The ACVAA Foundation"><img src="/g/foundation.jpg" width="200" height="169" alt="The ACVAA Foundation" border="0" /></a>')
         wr('</span>')
