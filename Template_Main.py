@@ -83,7 +83,7 @@ class Template_Main(Page):
         wr('<a href="/Index" title="ACVAA Homepage"><img src="/g/acva.png" alt="acvaa.org" width="172" height="32" border="0"></a>')
 
         # Link to Facebook
-        wr('<a href="https://www.facebook.com/AmericanCollegeVeterinaryAnesthesiologists"><img src="/g/facebook.png" alt="Facebook" title="Facebook" border="0"></a>')
+        wr('<a href="https://www.facebook.com/AmericanCollegeVeterinaryAnesthesiologists"><img src="/g/facebook.png" alt="Facebook" title="Facebook" border="0" style="margin-bottom: 3px"></a>')
 
         wr('</div><!-- #doc2 .yui-t1 -->')
         wr('</div><!-- #whitestripe -->')
