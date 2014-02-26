@@ -142,7 +142,7 @@ class Template_Main(Page):
             wr('</div>')
             wr('<div class="menu_links">')
             wr('<a href="/Account" class="menu_link">Your Account</a>')
-            wr('<a href="/Annual" class="menu_link">2012 Annual Meeting</a>')
+            wr('<a href="/Annual" class="menu_link">Annual Meeting</a>')
             wr('<a href="/Action" class="menu_link">Action Items</a>')
             wr('<a href="/BOD" class="menu_link">Board of Directors</a>')
             wr('<a href="/Committees" class="menu_link">Committees</a>')
