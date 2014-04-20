@@ -19,6 +19,12 @@ class Index (Template_Main):
         wr('<P>The goals of the ACVAA include establishing, evaluating and maintaining the highest standards in the practice of veterinary anesthesiology by promoting the establishment of educational facilities and clinical and research training in veterinary anesthesiology. Additionally, the ACVAA establishes the criteria of fitness for the designation of a specialist in the practice of veterinary anesthesiology.</P>')
 
         wr('<P>The ACVAA is an AVMA-Recognized Veterinary Specialty Organization. To learn more about specialization in veterinary medicine, see the American Board of Veterinary Specialties of the American Veterinary Medical Association <a href="https://www.avma.org/professionaldevelopment/education/specialties/pages/default.aspx">website</a>.')
+        
+        wr('''<div style="padding: 25px; border-top: 2px solid #324150; border-bottom: 2px solid #324150;">
+<h2>ACVAA Position Statement on Certificate Programs</h2>
+<P>The American College of Veterinary Anesthesia and Analgesia (ACVAA) Diplomate is the only recognized credential in North America acknowledging individual expertise and specialization in veterinary anesthesia and peri-operative analgesia. The ACVAA is organized under the authority of the American Board of Veterinary Specialists (ABVS) and the American Veterinary Medical Association (AVMA). All ACVAA Diplomates have undergone multi-year dedicated residency training under the supervision of ACVAA Diplomates, to achieve a high level of knowledge, skill, and competency in providing anesthesia and analgesia care in multiple species. Diplomate status in Anesthesia and Analgesia is granted following a rigorous examination process.</P>
+</div>
+''')
 
         wr('<P style="clear: both; margin-top: 25px; ">')
 
