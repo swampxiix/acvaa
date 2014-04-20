@@ -2,7 +2,8 @@ from WebKit.Page import Page
 from WebKit.Cookie import Cookie
 
 from z_account import is_logged_in, is_site_admin, acting_as
-from z_constants import DIPLSTR, RESDSTR, MONTHS
+from z_constants import DIPLSTR, RESDSTR, MONTHS, rText, wText, \
+    menu_alltop, menu_admin, menu_dips, menu_cands, menu_allbottom
 from z_forms import text, passwd, hidden, submit
 from z_times import get_year
 
@@ -98,104 +99,17 @@ class Template_Main(Page):
 
         wr = self.writeln
         wr('<div class="yui-b">')
-
-        wr('<a href="/Index" class="menu_link mlm">Home</a>')
-
-        wr('<div class="menu_section" id="menu_about">')
-        wr('<div class="menu_head mh_expanded">')
-        wr('About the ACVAA')
-        wr('</div>')
-        wr('<div class="menu_links">')
-        wr('<a href="/Mission_Statement" class="menu_link">Mission Statement</a>')
-        wr('<a href="/docs/History" class="menu_link">History of the ACVAA</a>')
-        wr('<a href="/Constitution" class="menu_link">Constitution &amp; Bylaws</a>')
-        wr('<a href="/Foundation/" class="menu_link">The ACVAA Foundation</a>')
-        wr('<span style="color: #324150; font-weight: bold;">Standards</span>')
-        wr('<a style="padding-left: 5px;" href="/docs/Position_Statements" class="menu_link">Position Statements</a>')
-        wr('<a style="padding-left: 5px;" href="/docs/ACVA_Training_Standards_2009.doc" class="menu_link">Residency Training Standards</a>')
-        wr('<a href="mailto:execdir@acvaa.org" class="menu_link">Need Help? Contact Us.</a>')
-        wr('</div>')
-        wr('</div>')
-
-        wr('<a href="/Directory" class="menu_link mlm">Member Directory</a>')
-        wr('<a href="/News" class="menu_link mlm">News</a>')
-        wr('<a href="/Calendar" class="menu_link mlm">Events Calendar</a>')
-        wr('<a href="/Jobs" class="menu_link mlm">Employment Opportunities</a>')
-
+        wr(rText(menu_alltop))
         if ISA:
-            wr('<div class="menu_section" id="menu_admin">')
-            wr('<div class="menu_head mh_expanded">')
-            wr('Administration')
-            wr('</div>')
-            wr('<div class="menu_links">')
-            wr('<a href="/UM_Index" class="menu_link">Manage Users</a>')
-            # Events mgmt. is here until SHB decides ppl other than admins can add them.
-            wr('<a href="/Events" class="menu_link">Manage Events</a>')
-            wr('</div>')
-            wr('</div>')
-
+            wr(rText(menu_admin))
         if (IS_LOGGED_IN and IS_DIP) or ISA:
-            PREV_SHOWN = True
-            wr('<div class="menu_section" id="menu_dips">')
-            wr('<div class="menu_head mh_expanded">')
-            wr('Diplomates')
-            wr('</div>')
-            wr('<div class="menu_links">')
-            wr('<a href="/Account" class="menu_link">Your Account</a>')
-            wr('<a href="/Annual" class="menu_link">Annual Meeting</a>')
-            wr('<a href="/Action" class="menu_link">Action Items</a>')
-            wr('<a href="/BOD" class="menu_link">Board of Directors</a>')
-            wr('<a href="/Committees" class="menu_link">Committees</a>')
-            wr('<a href="/Reports" class="menu_link">Annual Reports</a>')
-            wr('<a href="/Documents?cat=diplomates" class="menu_link">Documents &amp; Forms</a>')
-            wr('</div>')
-            wr('</div>')
-
+            wr(rText(menu_dips))
         if (IS_LOGGED_IN and (IS_RES or IS_DIP)) or ISA:
-            wr('<div class="menu_section" id="menu_cans">')
-            wr('<div class="menu_head mh_expanded">')
-            wr('Candidates')
-            wr('</div>')
-            wr('<div class="menu_links">')
-            if not PREV_SHOWN:
-                wr('<a href="/Account" class="menu_link">Your Account</a>')
-                if ISA:
-                    wr('<a href="/Events" class="menu_link">Manage Events</a>')
-            wr('<a href="/docs/Welcome" class="menu_link">Welcome to the ACVAA</a>')
-            wr('<a href="/Documents?cat=candidates" class="menu_link">Documents &amp; Forms</a>')
-            wr('</div>')
-            wr('</div>')
-
-        wr('<div class="menu_section" id="menu_vets">')
-        wr('<div class="menu_head mh_expanded">')
-        wr('Veterinarians')
-        wr('</div>')
-        wr('<div class="menu_links">')
-        wr('<a href="/docs/Small_Animal_Monitoring_2009.doc" class="menu_link">Small Animal Monitoring Guidelines</a>')
-        wr('<a href="/docs/Equine" class="menu_link">Equine Anesthesia Guidelines</a>')
-        wr('<a href="/docs/Residency_Programs" class="menu_link">Anesthesia Residency Programs</a>')
-        wr('<a href="/Directory?consult=true" class="menu_link">Consultants for Hire</a>')
-        wr('<a href="/Speaker" class="menu_link">Need an ACVAA Speaker?</a>')
-        wr('</div>')
-        wr('</div>')
-
-        wr('<div class="menu_section" id="menu_owners">')
-        wr('<div class="menu_head mh_expanded">')
-        wr('Pet Owners')
-        wr('</div>')
-        wr('<div class="menu_links">')
-        wr('<a href="/Owners" class="menu_link">Care for your Pet</a>')
-        wr('<a href="/Locator" class="menu_link">Find an Anesthesiologist</a>')
-        wr('</div>')
-        wr('</div>')
-
-        wr('<a href="/Links" class="menu_link mlm">Links to Other Sites</a>')
-
+            wr(rText(menu_cands))
+        wr(rText(menu_allbottom))
         if IS_LOGGED_IN:
             wr('<a href="/Logout" class="menu_link mlm">Log Out</a>')
-
         wr('</div><!-- .yui-b -->')
-
 
     def writeContent(self):
         pass

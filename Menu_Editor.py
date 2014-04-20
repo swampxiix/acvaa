@@ -2,7 +2,7 @@ from Template_Admin import Template_Admin
 from z_constants import menu_alltop, menu_admin, menu_dips, menu_cands, menu_allbottom, \
     rText, wText
 
-class Testing (Template_Admin):
+class Menu_Editor (Template_Admin):
     def title(self):
         return "Menu Editor"
 
@@ -18,7 +18,7 @@ class Testing (Template_Admin):
 
         wr('<h1>%s</h1>' % (self.title()))
         wr('<P>Make changes to the various menu sections here.</P>')
-        wr('<form action="Testing" method="POST">')
+        wr('<form action="Menu_Editor" method="POST">')
         wr('<h2>Public Section: Top</h2>')
         wr('<div>Everyone will be able to view this section.</div>')
         file1 = menu_alltop

@@ -31,6 +31,15 @@ JOBDIR = os.path.join(BASEDIR, 'Jobs', 'job_files')
 JOBCOUNT = os.path.join(JOBDIR, '.count')
 
 ######################################################
+# MENU-RELATED CONSTANTS
+
+MENUDIR = os.path.join(BASEDIR, 'menu_pieces')
+menu_alltop = os.path.join(MENUDIR, 'all_top.html')
+menu_admin = os.path.join(MENUDIR, 'admin_only.html')
+menu_dips = os.path.join(MENUDIR, 'diplomates.html')
+menu_cands = os.path.join(MENUDIR, 'candidates.html')
+menu_allbottom = os.path.join(MENUDIR, 'all_bottom.html')
+######################################################
 # READ/WRITE FUNCTIONS
 
 def rP(fullpath):
@@ -46,6 +55,20 @@ def wP(info, fullpath):
     file = open(fullpath, 'wb')
     cPickle.dump(info, file)
     file.close
+
+def rText (fullpath):
+    try:
+        file = open(fullpath, 'r')
+        txt = file.read()
+        file.close()
+    except IOError:
+        txt = ''
+    return txt
+
+def wText (txt, fullpath):
+    file = open(fullpath, 'w')
+    file.write(txt)
+    file.close()
 
 ######################################################
 # SORT-RELATED FUNCTIONS
