@@ -44,7 +44,7 @@ Residency Training Standards
 </h3>
 <p>
 <img src="/g/word_icon.png" width="16" height="16" alt="MSWord" />
-<a href="/docs/ACVA_Training_Standards_2009.doc">Download the Microsoft Word document</a> (193 kB).
+<a href="/docs/diplomates/ACVAA_Residency_Training_Standards_2014_final.doc">Download the Microsoft Word document</a> (193 kB).
 </p>
 </div>
 </div>

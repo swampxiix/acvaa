@@ -27,7 +27,7 @@ The first step toward having the ACVA be a resource for you during your residenc
 <P>
 Here you will find the:
 <ol class="dec">
-<li> <a href="/docs/ACVA_Training_Standards_2009.doc">Residency Training Standards</a> – to give you perspective on the ACVA's expectations of your training program
+<li> <a href="/docs/diplomates/ACVAA_Residency_Training_Standards_2014_final.doc">Residency Training Standards</a> – to give you perspective on the ACVA's expectations of your training program
 <li> <a href="/docs/ACVA_Resident_Reg_Form_2010.doc">Resident Registration Form</a> – to be completed and sent to the ACVA Executive Secretary (<a href="mailto:execdir@acva.org">execdir@acva.org</a>)
 <li> <a href="/docs/candidates/ACVA_Case_Activities_Log_template_July_2010.XLS">Caselog & Activities Log Template</a> - to be maintained during your residency and submitted to the ACVA Executive Secretary annually and on application to sit the certifying examination
 <li> <a href="/docs/ACVA_Residency_Timeline_2010.xls">ACVA Residency and Certification Timeline</a> – to be a guide throughout your residency and preparation for certification
@@ -47,7 +47,7 @@ Keep in mind that, according to the ACVA Bylaws and Residency Training Standards
 <ol class="dec">
 <li> be a graduate of a college or school of veterinary medicine and legally qualified to practice veterinary medicine in some country.
 <li> have completed a year of general veterinary practice or a rotating internship (≤ 30% anesthesia)
-<li> have satisfactorily participated in specialty training in a residency program that meets the requirements set by the ACVA's <a href="/docs/ACVA_Training_Standards_2009.doc">Residency Training Standards</a>
+<li> have satisfactorily participated in specialty training in a residency program that meets the requirements set by the ACVA's <a href="/docs/diplomates/ACVAA_Residency_Training_Standards_2014_final.doc">Residency Training Standards</a>
 <li> be licensed to practice veterinary medicine in the US or Canada (exceptions are made for applicants coved by a veterinary school license)
 <li> have a first-author manuscript describing original research in clinical or experimental anesthesia or pain management accepted by a peer-reviewed journal*
 </ol>
