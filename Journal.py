@@ -1,7 +1,7 @@
 from Template_Authenticated import Template_Authenticated
 from z_wiley import wiley_auth
 
-class Testing (Template_Authenticated):
+class Journal (Template_Authenticated):
     def title(self):
         return 'Authenticating with Publisher Website...'
 
