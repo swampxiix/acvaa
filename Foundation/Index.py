@@ -11,6 +11,10 @@ class Index (Template_Main):
 <div class="t12b">Foundation</div>
 <P><a href="/Foundation/">Introduction</a></P>
 <P><a href="/Foundation/Donors">List of Donors</a></P>
+
+<P>Click the button to make a donation via PayPal.</P>
+<P style="text-align: center;"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UYE3G92TAWBYA" title="Donate to the ACVAA Foundation"><img src="/g/btn_donateCC_LG.gif" alt="Donate to the ACVAA Foundation" width="147" height="47" border="0"></a></P>
+
 </div></div>
             ''')
 

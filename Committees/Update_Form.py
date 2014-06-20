@@ -18,6 +18,7 @@ class Update_Form (Template_Admin):
             for keyset in (STANDING_KEYS, ANNUAL_KEYS, ADHOC_KEYS, OTHER_KEYS):
                 for K in keyset:
                     wr('<table><tr><td colspan="4"><h2>%s</h2>' % (K))
+                    K = K.replace('ACVAA', 'ACVA') # name change
                     wr('<tr><th>Key<th>Title<th>Name<th>Year')
                     rrs, rre = 1, 11
                     if K == 'Exam Committee': rrs, rre = 1,16

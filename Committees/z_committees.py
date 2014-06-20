@@ -4,7 +4,7 @@ import os
 COMDIR = os.path.join(BASEDIR, 'Committees')
 COMFILE = os.path.join(COMDIR, 'committees.pick')
 
-STANDING_KEYS = ['Credentials Committee','Exam Committee','Committee on Education','Appeals Committee','Annual and 5-Year ABVS Report Committee','Committee on Residency Training','Multiple Choice Exam Committee','ACVA-AVTA Liaison Committee','ACVA Website Committee','Annual Meeting Planning Committee','ACVA Foundation Committee']
+STANDING_KEYS = ['Credentials Committee','Exam Committee','Committee on Education','Appeals Committee','Annual and 5-Year ABVS Report Committee','Committee on Residency Training','Multiple Choice Exam Committee','ACVAA-AVTA Liaison Committee','ACVAA Website Committee','Annual Meeting Planning Committee','ACVAA Foundation Committee']
 ANNUAL_KEYS =['Nominating Committee', 'Resident Abstract Awards Committee',]
 ADHOC_KEYS = ['Essay Questions Bank Committee', 'Exam Review Committee', 'Practitioner Certificate Committee', 'Public Outreach Committee', 'Re-Certification Committee', 'Society Committee',]
 OTHER_KEYS = ['ABVS Representative','ABVS Alternate','ACVIM Collaborative Listserve Representatives','ACVS Liaison','NAVC Liaison','AVMA Liaison',]
@@ -26,7 +26,8 @@ def getCommDict():
         for category in KEYSET:
             FINAL[CTITLE][category] = {}
             for posn in C.keys():
-                if posn.startswith(category):
+                newposn = posn.replace('ACVA', 'ACVAA') # name change
+                if posn.startswith(category) or newposn.startswith(category):
                     FINAL[CTITLE][category][posn] = C.get(posn)
             CATKEYS = FINAL[CTITLE][category].keys()
             CATKEYS.sort(compnum)

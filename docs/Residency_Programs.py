@@ -2,16 +2,16 @@ from acva.Template_Main import Template_Main
 
 class Residency_Programs (Template_Main):
     def title(self):
-        return "ACVA Registered Residencies"
+        return "ACVAA Registered Residencies"
 
     def writeContent(self):
         wr = self.writeln
         wr('''
 
-<h1>ACVA Registered Residencies - 2010</h1>
+<h1>ACVAA Registered Residencies</h1>
 
 <p>
-The following residency programs were registered with the ACVA in 2010.
+The following residency programs were registered with the ACVAA.
 Veterinarians interested in a residency program are encouraged to contact
 the program leaders. Please note that these are registered programs and not
 available positions. Available positions can be found under <a href="/Jobs">Employment
@@ -108,12 +108,22 @@ Manhattan, KS  66506  USA<br>
 Program leader: Dr. Rose McMurphy<br>
 
 <li>
+Liverpool<br>
+Leahurst Campus<br>
+School of Veterinary Science<br>
+University of Liverpool<br>
+Chester High Road, Neston<br>
+CH6 47TE<br>
+United Kingdom<br>
+Program leader: <a href="mailto:evarioja@liv.ac.uk">Dr. Eva Rioja Garcia</a><br>
+
+
+<li>
 The University of Melbourne<br>
 Faculty of Veterinary Medicine<br>
 250 Princes Highway<br>
 Werribee, VIC 3030 Australia<br>
 Program Leader: Dr. Sebastien Bauquier<br>
-
 
 <li>
 Michigan State University<br>
@@ -149,6 +159,15 @@ University of Montreal<br>
 Saint-Hyacinthe, QC <br>
 Canada  J2S 7C6<br>
 Program leader: Dr. Patrick Burns<br>
+
+<li>
+Murdoch<br>
+School of Veterinary and Biomedical Sciences<br>
+Murdoch University <br>
+South Street<br>
+Murdoch, WA 6150<br>
+Australia<br>
+Program leader: <a href="mailto:e.drynan@murdoch.edu.au">Dr. Eleanor Drynan</a><br>
 
 <li>
 North Carolina<br>

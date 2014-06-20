@@ -4,7 +4,7 @@ from z_committees import STANDING_KEYS, ADHOC_KEYS, OTHER_KEYS, ANNUAL_KEYS, get
 
 class Index (Template_Authenticated):
     def title(self):
-        return 'ACVA Committees'
+        return 'ACVAA Committees'
 
     def writeContent(self):
         wr = self.writeln
