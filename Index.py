@@ -1,6 +1,7 @@
 from Template_Main import Template_Main
 from z_constants import RESDSTR, DIPLSTR
 from z_events import get_next_event
+from z_wiley import get_journal_access
 
 class Index (Template_Main):
     def title(self):
@@ -29,7 +30,10 @@ class Index (Template_Main):
         wr('<P style="clear: both; margin-top: 25px; ">')
 
         wr('<span style="margin-right: 40px;">')
-        if IS_DIP or IS_RES:
+
+        clickusername = self.request().cookies().get('username')
+        accesslist = get_journal_access()
+        if clickusername in accesslist:
             wr('<a href="Journal" title="Journal"><img src="/g/journal.jpg" width="200" height="169" alt="Journal" border="0" /></a>')
         else:
             wr('<a href="Foundation" title="The ACVAA Foundation"><img src="/g/foundation.jpg" width="200" height="169" alt="The ACVAA Foundation" border="0" /></a>')

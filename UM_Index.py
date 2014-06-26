@@ -10,6 +10,11 @@ class UM_Index (Template_Admin):
 
     def writeContent(self):
         wr = self.writeln
+        wr('<div class="button">')
+        wr('<a href="UM_Journal">ACVAA Journal Access</a>')
+        wr('</div>')
+
+
         wr('<h1>%s</h1>' % (self.title()))
 
         qs = self.request().fields()
