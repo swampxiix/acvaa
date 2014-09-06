@@ -5,6 +5,7 @@ REGULAR = os.path.join(FDIR, 'donors.regular')
 CHARTER = os.path.join(FDIR, 'donors.charter')
 FOUNDER = os.path.join(FDIR, 'donors.founder')
 D = {'r': REGULAR, 'c': CHARTER, 'f': FOUNDER}
+TRAVELFLAG = os.path.join(FDIR, 'travel.flag')
 
 def get_donors (dtype='r'):
     L = rP(D.get(dtype))
@@ -26,3 +27,16 @@ def del_donor (dtype, dname):
     if dname in L:
         del L[L.index(dname)]
     wP(L, fn)
+
+def show_travel():
+    p = rP(TRAVELFLAG)
+    return p
+
+def toggle_travel():
+    flag = rP(TRAVELFLAG)
+    if flag == True:
+        wP(False, TRAVELFLAG)
+    else:
+        wP(True, TRAVELFLAG)
+
+

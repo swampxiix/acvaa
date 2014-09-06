@@ -1,4 +1,6 @@
 from acva.Template_Main import Template_Main
+from acva.z_account import is_site_admin
+from z_found import show_travel
 
 class Index (Template_Main):
     def title(self):
@@ -21,10 +23,22 @@ class Index (Template_Main):
 
     def writeContent(self):
         wr = self.writeln
+
+        ISA = is_site_admin(self.request())
+        if ISA:
+            wr('<div class="button">')
+            if show_travel():
+                wr('<a href="Change_Travel">Hide Scholarship Info</a>')
+            else:
+                wr('<a href="Change_Travel">Show Scholarship Info</a>')
+            wr('</div>')
+
+
         wr('<h1>%s</h1>' % (self.title()))
         self.sidebar()
 
-        wr('''
+        if show_travel():
+            wr('''
 <h2>
 The ACVAA Foundation at Work
 </h2>
@@ -34,7 +48,9 @@ The ACVAA Foundation is pleased to accept applications for two travel scholarshi
 <br />
 <small>* 20kB Word document</small>
 </p>
+            ''')
 
+        wr('''
 <h2>
 Mission Statement
 </h2>
