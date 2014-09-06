@@ -24,6 +24,9 @@ class Index (Template_Main):
         wr('''<div style="padding: 25px; border-top: 2px solid #324150; border-bottom: 2px solid #324150;">
 <h2>ACVAA Position Statement on Certificate Programs</h2>
 <P>The American College of Veterinary Anesthesia and Analgesia (ACVAA) Diplomate is the only recognized credential in North America acknowledging individual expertise and specialization in veterinary anesthesia and peri-operative analgesia. The ACVAA is organized under the authority of the American Board of Veterinary Specialists (ABVS) and the American Veterinary Medical Association (AVMA). All ACVAA Diplomates have undergone multi-year dedicated residency training under the supervision of ACVAA Diplomates, to achieve a high level of knowledge, skill, and competency in providing anesthesia and analgesia care in multiple species. Diplomate status in Anesthesia and Analgesia is granted following a rigorous examination process.</P>
+<P>
+The ACVAA promotes anesthesia and analgesia continuing education and training programs designed to advance the knowledge and competency of all veterinary care providers. <a href="/CPE/Index">Endorsement of Certificate granting programs</a> can be accomplished by meeting or exceeding minimal ACVAA guidelines. <a href="/CPE/Guidelines">These guidelines</a> are designed to inform the profession and the public by requiring accurate Certificate program description of content, structure, knowledge and the skill level attained by the anesthesia and analgesia care provider. <a href="/CPE/Programs">ACVAA approved Certificate granting programs</a> are identified and listed on the ACVAA website.
+</P>
 </div>
 ''')
 
