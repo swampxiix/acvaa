@@ -180,12 +180,16 @@ class Directory (Template_Main):
             else:
                 Rs = get_users(utype='r')
 
+            Es = get_users(utype='e') # Emeritus
+
             wr('<div id="acct-container" class="acct-tabs"> ')
             wr('<ul class="idTabs"> ')
             if Ds:
                 wr('<li><a class="selected" href="#tab1">Diplomates</a></li> ')
             if Rs:
                 wr('<li><a href="#tab2">Candidates</a></li> ')
+            if Rs:
+                wr('<li><a href="#tab3">Emeritus Diplomates</a></li> ')
             wr('</ul> ')
 
             if Ds:
@@ -200,6 +204,11 @@ class Directory (Template_Main):
                 wr('<div id="tab2">')
                 self.format_list(Rs)
                 wr('</div><!-- tab2 -->')
+
+            if Es:
+                wr('<div id="tab3">')
+                self.format_list(Es)
+                wr('</div><!-- tab3 -->')
 
             wr('</div><!-- acct-container -->')
 

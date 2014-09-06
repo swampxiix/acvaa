@@ -10,6 +10,7 @@ EMAIL_REGISTER = os.path.join(REGDIR, 'email.dict')
 
 DIPLSTR = 'T6yawy77cI11'
 RESDSTR = 'c6z4d6G34AYx'
+EMERSTR = 'W1P477cI4AZf'
 
 STATES = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY']
 STATES_LOOKUP = {'AK': 'Alaska', 'AL': 'Alabama', 'AR': 'Arkansas', 'AZ': 'Arizona', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'IA': 'Iowa', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'MA': 'Massachusetts', 'MD': 'Maryland', 'ME': 'Maine', 'MI': 'Michigan', 'MN': 'Minnesota', 'MO': 'Missouri', 'MS': 'Mississippi', 'MT': 'Montana', 'NC': 'North Carolina', 'ND': 'North Dakota', 'NE': 'Nebraska', 'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NV': 'Nevada', 'NY': 'New York', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VA': 'Virginia', 'VT': 'Vermont', 'WA': 'Washington', 'WI': 'Wisconsin', 'WV': 'West Virginia', 'WY': 'Wyoming', }
@@ -19,10 +20,11 @@ PROVS_LOOKUP = {'AB': 'Alberta', 'BC': 'British Columbia', 'MB': 'Manitoba', 'NB
 HARV_DIPL = 'B9cL4zb9526l'
 HARV_RESD = 'W1PBy65Q567i'
 
-ALL_ROLES = ['admin', 'diplomate', 'resident']
+ALL_ROLES = ['admin', 'diplomate', 'resident', 'emeritus']
 
 DIPL_REGISTER = os.path.join(REGDIR, 'diplomates.list')
 RESD_REGISTER = os.path.join(REGDIR, 'residents.list')
+EMER_REGISTER = os.path.join(REGDIR, 'emeritus.list')
 
 EVENT_REGISTER = os.path.join(REGDIR, 'event_owners.dict')
 

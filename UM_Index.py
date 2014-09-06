@@ -39,6 +39,7 @@ class UM_Index (Template_Admin):
         wr('<th>A')
         wr('<th>D')
         wr('<th>R')
+        wr('<th>E')
         wr('<th colspan="3">Actions')
 
         for ak in aks:

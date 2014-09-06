@@ -1,7 +1,8 @@
 import sha, os, random, glob
 
 from z_constants import ACCTDIR, rP, wP, DIPLSTR, RESDSTR, HARV_DIPL, \
-    HARV_RESD, EMAIL_REGISTER, compnum, DIPL_REGISTER, RESD_REGISTER
+    HARV_RESD, EMAIL_REGISTER, compnum, \
+    DIPL_REGISTER, RESD_REGISTER, EMER_REGISTER, ALL_ROLES
 
 from z_email import send_reset_password, send_registration_confirm
 
@@ -158,6 +159,8 @@ def get_users (utype):
         REG = DIPL_REGISTER
     elif utype in ['resident', 'residents', 'r']:
         REG = RESD_REGISTER
+    elif utype in ['emeritus', 'e']:
+        REG = EMER_REGISTER
     else:
         return {}
 
@@ -271,6 +274,8 @@ def cache_role (username, role, action):
             REG = RESD_REGISTER
         if role == 'diplomate':
             REG = DIPL_REGISTER
+        if role == 'emeritus':
+            REG = EMER_REGISTER
         L = rP(REG)
         if not L: L = []
         if action == 'reg':
@@ -306,11 +311,13 @@ def save_user_roles(username, roles):
             ui['roles'] = [roles]
         wP(ui, os.path.join(ACCTDIR, username))
         # cache role
-        for x in ['diplomate', 'resident']:
-            if x in ui['roles']:
-                cache_role (username, x, 'reg')
-            else:
-                cache_role (username, x, 'dereg')
+#        for x in ['diplomate', 'resident']:
+        for x in ALL_ROLES:
+            if x != 'admin':
+                if x in ui['roles']:
+                    cache_role (username, x, 'reg')
+                else:
+                    cache_role (username, x, 'dereg')
 
 def acting_as (req):
     c = req.cookies()
