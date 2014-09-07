@@ -1,5 +1,5 @@
 import os.path
-from acva.z_constants import BASEDIR
+from acva.z_constants import BASEDIR, rText, wText
 
 CPEDIR = os.path.join(BASEDIR, 'CPE')
 CPEDOCS = os.path.join(CPEDIR, 'docs')
@@ -18,13 +18,8 @@ LOOKUP = {  INFILE: 'Index',
 
 def get_raw_from (filename):
     docpath = os.path.join(CPEDOCS, filename)
-    if os.path.exists(docpath):
-        file = open(docpath, 'r')
-        txt = file.read()
-        file.close()
-        return txt
-    else:
-        return ''
+    txt = rText(docpath)
+    return txt
 
 def get_html_from (filename):
     txt = get_raw_from(filename)
@@ -35,7 +30,5 @@ def get_html_from (filename):
 def write_raw_to (filename, rawtext):
     docpath = os.path.join(CPEDOCS, filename)
     if os.path.exists(docpath): # no new docs on the fly
-        file = open(docpath, 'w')
-        file.write(rawtext)
-        file.close()
+        wText(rawtext, docpath)
 

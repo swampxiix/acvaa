@@ -5,6 +5,7 @@ BASEDIR = os.path.join(WWRTDIR, 'acva')
 ACCTDIR = os.path.join(BASEDIR, 'accounts')
 REGDIR = os.path.join(BASEDIR, 'reg')
 EVENTDIR = os.path.join(BASEDIR, 'events')
+REZDIR = os.path.join(BASEDIR, 'Residency', 'files')
 
 EMAIL_REGISTER = os.path.join(REGDIR, 'email.dict')
 
