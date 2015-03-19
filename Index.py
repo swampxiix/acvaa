@@ -13,6 +13,8 @@ class Index (Template_Main):
         IS_RES = rolestr == RESDSTR
         IS_DIP = rolestr == DIPLSTR
 
+        wr('<div class="spcl_msg">Infrastructure Upgrades<br><span style="font-weight: normal;">Starting Sunday, March 22 we will be upgrading the server that runs our site. The transition will likely happen without incident, but please be aware that unexpected downtime may temporarily affect your ability to use the site. Thank you for your understanding.</span></div>')
+
         wr('<P class="t14serif">The American College of Veterinary Anesthesia and Analgesia was founded in 1975 to promote the advancement of veterinary anesthesiology and to assist the veterinary profession in providing exceptional service to all animals.</P>')
 
         wr('<P>The ACVAA is currently composed of over 220 members who practice veterinary anesthesia across the globe.</P>')

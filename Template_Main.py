@@ -18,6 +18,7 @@ class Template_Main(Page):
         self.writeln('<link rel="shortcut icon" href="/g/favicon.ico" type="image/x-icon" />')
         self.writeln('<link rel="stylesheet" href="/c/reset-fonts-grids.css" type="text/css">')
         self.writeln('<link rel="stylesheet" href="/c/acva.css" type="text/css">')
+        self.writeln('<meta name="google-site-verification" content="le_jUqrIqLeve30wTSPXwZbxM3cY_F8aXURJgmJWwvU" />')
 
     def writeJavaScript(self):
         self.writeln('<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>')
