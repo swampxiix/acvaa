@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from Template_Main import Template_Main
 
 class Terms (Template_Main):
@@ -17,7 +19,7 @@ By accessing this site, you signify your agreement with and understanding of the
 </p>
 
 <p>
-This website is provided by the American College of Veterinary Anesthesia and Analgesia (referred to as ‘ACVAA’, ‘we’, ‘us’ or ‘our’ herein) and may be used for informational purposes only.
+This website is provided by the American College of Veterinary Anesthesia and Analgesia (referred to as 'ACVAA', 'we', 'us' or 'our' herein) and may be used for informational purposes only.
 </p>
 
 <h3>Use of Materials on this Website</h3>
@@ -49,7 +51,7 @@ This website contains links to other third party websites for which the ACVAA is
 <h3>Linking to this Website</h3>
 
 <p>
-You do not have to ask permission to link directly to pages hosted on this site. However we do not permit our pages to be loaded into frames on your site, our pages must load into the user’s entire window.
+You do not have to ask permission to link directly to pages hosted on this site. However we do not permit our pages to be loaded into frames on your site, our pages must load into the user's entire window.
 </p>
 
 <h3>Personal Data</h3>
@@ -76,10 +78,10 @@ You can visit the majority of our website without revealing any personal informa
 
 <h2>How we Collect Personal Information</h2>
 
-<h3>1) Use of ‘cookies’</h3>
+<h3>1) Use of 'cookies'</h3>
 
 <p>
-Cookies are small files which are sent to your web browser and stored on your computer’s hard drive to ‘remember’ who you are. The majority of web browsers accept cookies, but you can usually change the browser settings to restrict or block all cookies if you wish. However, please be aware that if you do, some functionality may be lost when you use this website.
+Cookies are small files which are sent to your web browser and stored on your computer's hard drive to 'remember' who you are. The majority of web browsers accept cookies, but you can usually change the browser settings to restrict or block all cookies if you wish. However, please be aware that if you do, some functionality may be lost when you use this website.
 </p>
 
 <h3>2) Completion of online forms</h3>

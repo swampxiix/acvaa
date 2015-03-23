@@ -119,7 +119,7 @@ class Template_Main(Page):
         wr = self.writeln
         wr('<div id="ft" role="contentinfo">')
         wr('<p>Copyright &copy; 1995&ndash;%s American College of Veterinary Anesthesia and Analgesia with all rights reserved.<br />' % (get_year()))
-        wr('<a href="Terms">Terms of Use</a> &middot; <a href="mailto:execdir@acvaa.org">Need Help? Contact Us.</a></p>')
+        wr('<a href="/Terms">Terms of Use</a> &middot; <a href="mailto:execdir@acvaa.org">Need Help? Contact Us.</a></p>')
         wr('</div><!-- #ft -->')
 
 ###############################################################################
