@@ -1,27 +1,40 @@
-import smtplib, time
+import smtplib, os.path
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email.MIMEText import MIMEText
+from email import Encoders
 
-#FRADDR = 'gary@eringary.com'
-FRADDR = 'dev@acva.org'
-MAILSERV = 'localhost'
+GMAIL_USER = "dev@acvaa.org"
+GMAIL_PWD = "d4E.z6XhwfD+dbNosqGF"
+MAIL_SERV = "smtp.gmail.com"
+MAIL_PORT = 587
 
-def get_timestamp():
-    return time.strftime("%a, %d %b %Y %H:%M:%S %Z", time.localtime(time.time()))
+def create_msg (to_addr, subject, text, files=[]):
+    msg = MIMEMultipart()
+    msg['From'] = GMAIL_USER
+    msg['To'] = to_addr
+    msg['Subject'] = subject
+    msg.attach(MIMEText(text))
+    for file in files:
+        part = MIMEBase('application', "octet-stream")
+        part.set_payload( open(file,"rb").read() )
+        Encoders.encode_base64(part)
+        part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(file))
+        msg.attach(part)
+    return msg
 
-def send_email(from_addr, subject, to_addr, msg):
-    a = 'Date: %s\r\n' % (get_timestamp())
-    a += 'From: %s\r\n' % (from_addr)
-    a += 'Subject: %s\r\n' % (subject)
-    a += 'To: %s\r\n' % (to_addr)
-    a += '\r\n'
-    a += msg
-    server = smtplib.SMTP(MAILSERV)
-    server.set_debuglevel(0)
-    server.sendmail(from_addr, to_addr, a)
-    server.quit()
+def send_email (to_addr, msg):
+    mailServer = smtplib.SMTP(MAIL_SERV, MAIL_PORT)
+    mailServer.ehlo()
+    mailServer.starttls()
+    mailServer.ehlo()
+    mailServer.login(GMAIL_USER, GMAIL_PWD)
+    mailServer.sendmail(GMAIL_USER, to_addr, msg.as_string())
+    mailServer.close()
 
 def send_registration_confirm(to_addr, userid):
     a = []
-    a.append('Congratulations! Your registration with the ACVA website was successful.')
+    a.append('Congratulations! Your registration with the ACVAA website was successful.')
     a.append('')
     a.append('Your user name for the site is: %s' % (userid))
     a.append('')
@@ -29,12 +42,13 @@ def send_registration_confirm(to_addr, userid):
     a.append('')
     a.append('Thanks for taking the time to register & we look forward to serving you well with our new website.')
     a.append('')
-    msg = '\r\n'.join(a)
-    send_email(FRADDR, 'ACVA Welcome Message', to_addr, msg)
+    text = '\r\n'.join(a)
+    msg = create_msg(to_addr, 'ACVAA Welcome Message', text)
+    send_email(to_addr, msg)
 
 def send_reset_password(to_addr, newpass):
     a = []
-    a.append('Your password for the ACVA website has been reset.')
+    a.append('Your password for the ACVAA website has been reset.')
     a.append('')
     a.append('Your new password is: %s' % (newpass))
     a.append('')
@@ -42,10 +56,11 @@ def send_reset_password(to_addr, newpass):
     a.append('')
     a.append('After logging in, please access your account and change your password to something that will be easy for you to remember.')
     a.append('')
-    a.append('If you did not request this change or cannot remember your ACVA site username, please contact an ACVA site administrator at once.')
+    a.append('If you did not request this change or cannot remember your ACVAA site username, please contact an ACVAA site administrator at once.')
     a.append('')
     a.append('Thank you.')
     a.append('')
-    msg = '\r\n'.join(a)
-    send_email(FRADDR, 'ACVA Password Reset', to_addr, msg)
+    text = '\r\n'.join(a)
+    msg = create_msg(to_addr, 'ACVAA Password Reset', text)
+    send_email(to_addr, msg)
 

@@ -28,7 +28,7 @@ The first step toward having the ACVA be a resource for you during your residenc
 Here you will find the:
 <ol class="dec">
 <li> <a href="/docs/diplomates/ACVAA_Residency_Training_Standards_2014_final.doc">Residency Training Standards</a> &ndash; to give you perspective on the ACVA's expectations of your training program
-<li> <a href="/docs/ACVA_Resident_Reg_Form_2010.doc">Resident Registration Form</a> &ndash; to be completed and sent to the ACVA Executive Secretary (<a href="mailto:execdir@acva.org">execdir@acva.org</a>)
+<li> <a href="/docs/ACVA_Resident_Reg_Form_2010.doc">Resident Registration Form</a> &ndash; to be completed and sent to the ACVA Executive Secretary (<a href="mailto:execdir@acvaa.org">execdir@acvaa.org</a>)
 <li> <a href="/docs/candidates/ACVA_Case_Activities_Log_template_July_2010.XLS">Caselog & Activities Log Template</a> &ndash; to be maintained during your residency and submitted to the ACVA Executive Secretary annually and on application to sit the certifying examination
 <li> <a href="/docs/ACVA_Residency_Timeline_2010.xls">ACVA Residency and Certification Timeline</a> &ndash; to be a guide throughout your residency and preparation for certification
 <li> <a href="/docs/candidates/Approved_Peer_Review_Journals.docx">A list of journals</a> considered suitable for your manuscript submission. This is not all inclusive. If you have any questions please contact the Executive Secretary.
@@ -58,7 +58,7 @@ Keep in mind that, according to the ACVA Bylaws and Residency Training Standards
 </P>
 
 <P>
-If you have concerns about any of these requirements, please contact the executive secretary (<a href="mailto:execdir@acva.org">execdir@acva.org</a>). It is far better to address possible deficits at the beginning of your training program than to deal with possible rejection of your credentials at the end.
+If you have concerns about any of these requirements, please contact the executive secretary (<a href="mailto:execdir@acvaa.org">execdir@acvaa.org</a>). It is far better to address possible deficits at the beginning of your training program than to deal with possible rejection of your credentials at the end.
 </P>
 
 <P>
@@ -70,7 +70,7 @@ Submission of your "credentials" begins the certification process. If your crede
 </P>
 
 <P>
-If at any time during your residency you have any questions or issues, do not hesitate to contact the ACVA executive secretary through the link Executive Director/Secretary on the website or at <a href="mailto:execdir@acva.org">execdir@acva.org</a>.
+If at any time during your residency you have any questions or issues, do not hesitate to contact the ACVA executive secretary through the link Executive Director/Secretary on the website or at <a href="mailto:execdir@acvaa.org">execdir@acvaa.org</a>.
 </P>
 
 <P>
