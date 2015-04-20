@@ -2,7 +2,7 @@ import sha, os, random, glob
 
 from z_constants import ACCTDIR, rP, wP, DIPLSTR, RESDSTR, HARV_DIPL, \
     HARV_RESD, EMAIL_REGISTER, compnum, \
-    DIPL_REGISTER, RESD_REGISTER, EMER_REGISTER, ALL_ROLES
+    DIPL_REGISTER, RESD_REGISTER, EMER_REGISTER, HONO_REGISTER, MEMO_REGISTER, ALL_ROLES
 
 from z_email import send_reset_password, send_registration_confirm
 
@@ -161,6 +161,10 @@ def get_users (utype):
         REG = RESD_REGISTER
     elif utype in ['emeritus', 'e']:
         REG = EMER_REGISTER
+    elif utype in ['honorary', 'h']:
+        REG = HONO_REGISTER
+    elif utype in ['memoriam', 'm']:
+        REG = MEMO_REGISTER
     else:
         return {}
 
@@ -276,6 +280,10 @@ def cache_role (username, role, action):
             REG = DIPL_REGISTER
         if role == 'emeritus':
             REG = EMER_REGISTER
+        if role == 'honorary':
+            REG = HONO_REGISTER
+        if role == 'memoriam':
+            REG = MEMO_REGISTER
         L = rP(REG)
         if not L: L = []
         if action == 'reg':
@@ -296,7 +304,7 @@ def delete_user_account (userid):
         unregister_email_addr(userid)
         os.unlink(userfile)
     # cache role
-    for x in ['diplomate', 'resident']:
+    for x in ALL_ROLES:
         cache_role (userid, x, 'dereg')
 
 from types import *

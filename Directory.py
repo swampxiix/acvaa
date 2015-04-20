@@ -181,6 +181,8 @@ class Directory (Template_Main):
                 Rs = get_users(utype='r')
 
             Es = get_users(utype='e') # Emeritus
+            Hs = get_users(utype='h') # Honorary
+            Ms = get_users(utype='m') # Memoriam
 
             wr('<div id="acct-container" class="acct-tabs"> ')
             wr('<ul class="idTabs"> ')
@@ -188,8 +190,12 @@ class Directory (Template_Main):
                 wr('<li><a class="selected" href="#tab1">Diplomates</a></li> ')
             if Rs:
                 wr('<li><a href="#tab2">Candidates</a></li> ')
-            if Rs:
+            if Es:
                 wr('<li><a href="#tab3">Emeritus Diplomates</a></li> ')
+            if Hs:
+                wr('<li><a href="#tab4">Honorary Diplomates</a></li> ')
+            if Ms:
+                wr('<li><a href="#tab5">In Memoriam</a></li> ')
             wr('</ul> ')
 
             if Ds:
@@ -209,6 +215,16 @@ class Directory (Template_Main):
                 wr('<div id="tab3">')
                 self.format_list(Es)
                 wr('</div><!-- tab3 -->')
+
+            if Hs:
+                wr('<div id="tab4">')
+                self.format_list(Hs)
+                wr('</div><!-- tab4 -->')
+
+            if Ms:
+                wr('<div id="tab5">')
+                self.format_list(Ms)
+                wr('</div><!-- tab5 -->')
 
             wr('</div><!-- acct-container -->')
 

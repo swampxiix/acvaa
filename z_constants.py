@@ -21,11 +21,13 @@ PROVS_LOOKUP = {'AB': 'Alberta', 'BC': 'British Columbia', 'MB': 'Manitoba', 'NB
 HARV_DIPL = 'B9cL4zb9526l'
 HARV_RESD = 'W1PBy65Q567i'
 
-ALL_ROLES = ['admin', 'diplomate', 'resident', 'emeritus']
+ALL_ROLES = ['admin', 'diplomate', 'resident', 'emeritus', 'honorary', 'memoriam']
 
 DIPL_REGISTER = os.path.join(REGDIR, 'diplomates.list')
 RESD_REGISTER = os.path.join(REGDIR, 'residents.list')
 EMER_REGISTER = os.path.join(REGDIR, 'emeritus.list')
+HONO_REGISTER = os.path.join(REGDIR, 'honorary.list')
+MEMO_REGISTER = os.path.join(REGDIR, 'memoriam.list')
 
 EVENT_REGISTER = os.path.join(REGDIR, 'event_owners.dict')
 
