@@ -9,7 +9,7 @@ from z_times import get_year
 
 import time
 
-class Template_Main (Page):
+class Template_Testing (Page):
     def writeDocType(self):
         self.writeln('<!DOCTYPE html>')
 
@@ -90,7 +90,7 @@ class Template_Main (Page):
         wr = self.writeln
         wr('''
 <div class="container" id="header">
-  <a href="http://www.acvaa.org/"><img width="709" height="184" alt="ACVAA logo and wordmark" src="/g/header_2015.png" class="img-responsive" border="0"></a>
+  <img width="709" height="184" alt="ACVAA logo and wordmark" src="g/header_2015.png" class="img-responsive">
 </div><!-- #header -->
             ''')
 
@@ -136,7 +136,9 @@ class Template_Main (Page):
         IS_RES = rolestr == RESDSTR
         IS_DIP = rolestr == DIPLSTR
         PREV_SHOWN = False
+
         wr = self.writeln
+        wr('<div class="yui-b">')
         wr(rText(menu_alltop))
         if ISA:
             wr(rText(menu_admin))
@@ -145,6 +147,9 @@ class Template_Main (Page):
         if (IS_LOGGED_IN and (IS_RES or IS_DIP)) or ISA:
             wr(rText(menu_cands))
         wr(rText(menu_allbottom))
+        if IS_LOGGED_IN:
+            wr('<a href="/Logout" class="menu_link mlm">Log Out</a>')
+        wr('</div><!-- .yui-b -->')
 
     def writeContent(self):
         pass
@@ -217,11 +222,11 @@ class Template_Main (Page):
         wr('''
     <div class="form-group">
       <label class="sr-only" for="username">Username</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+      <input type="email" class="form-control" id="username" placeholder="Username">
     </div>
     <div class="form-group">
       <label class="sr-only" for="password">Password</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+      <input type="password" class="form-control" id="password" placeholder="Password">
     </div>
     <input class="btn btn-orange btn-sm" type="submit" value="Sign In">
     <span class="sm"><a href="Login_Help">Help?</a></span>

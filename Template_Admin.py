@@ -8,26 +8,29 @@ class Template_Admin (Template_Main):
         ISA = is_site_admin(self.request())
         wr = self.writeln
         self.writeHeader()
-        wr('<div id="doc2" class="yui-t1">')
-        wr('<div id="bd" role="main">')
-        wr('<div id="yui-main">')
-        wr('<div class="yui-b">')
-        wr('<div class="yui-g">')
+        self.writeSubHeader()
+        wr('''
+<div class="container" id="body-container">
+  <div class="row">
+    <!-- LEFT MENU COLUMN ###################################################### -->
+    <div class="col-md-3" id="side-menu">
+            ''')
+        self.writeNav()
+        wr('''
+    </div><!-- .col-md-3 #side-menu -->
+    <!-- RIGHT CONTENT COLUMN ###################################################### -->
+    <div class="col-md-9" id="main-content">
+            ''')
 
         if ISA:
             self.writeContent()
         else:
             self.writeln('<h1>You must be a site administrator to access this page.</h1>')
 
-        wr('</div><!-- .yui-g -->')
-        wr('</div><!-- .yui-b -->')
-        wr('</div><!-- #yui-main -->')
 
-        if ISA:
-            self.writeNav()
-
-        wr('</div><!-- #bd -->')
+        wr('''
+    </div><!-- .col-md-9 -->
+  </div><!-- .row -->
+</div><!-- #body-container -->
+            ''')
         self.writeFooter()
-        wr('</div><!-- #doc2 .yui-t1 -->')
-
-
