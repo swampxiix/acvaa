@@ -8,21 +8,16 @@ from z_forms import hidden, text, select, passwd, radio, radio_jq
 
 class Register (Template_Main):
 
-    def writeGlobalNav(self):
-        self.writeln('<div id="stripes"><div id="whitestripe"><div id="doc2" class="yui-t1"><a href="Index" title="ACVAA Homepage"><img src="/g/acva.png" alt="acvaa.org" width="172" height="32" border="0"></a></div><!-- #doc2 .yui-t1 --></div><!-- #whitestripe --></div><!-- #stripes -->')
-
     def writeNav(self):
         wr = self.writeln
-        wr('<div class="yui-b">')
-        wr('<div class="menu_section">')
-        wr('<div class="menu_head mh_expanded">')
-        wr('Need Help?')
-        wr('</div><!-- .menu_head -->')
-        wr('<div class="menu_links">')
-        wr('If you have problems registering &amp; can\'t figure out where things are going awry, please contact %s or %s.' % (self.lydia(), self.steph()))
-        wr('</div><!-- .menu_links -->')
-        wr('</div><!-- .menu_section -->')
-        wr('</div><!-- .yui-b -->')
+        wr('''
+<div class="menu_links">
+  <h2>Need Help?</h2>
+  <P>
+    If you have problems registering &amp; can\'t figure out where things are going awry, please <a href="mailto:execdir@acvaa.org">contact us</a>.
+  </P>
+</div>
+            ''')
 
     def title(self):
         return 'ACVAA Site Registration'

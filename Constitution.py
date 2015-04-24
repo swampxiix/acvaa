@@ -28,6 +28,7 @@ class Constitution (Template_Main):
         if self.request()._environ.get('REQUEST_METHOD') == 'POST':
             ERROR = None
             form = self.request().fields()
+            wr(form)
 
             fobj = form.get('datafile')
             try:
@@ -65,7 +66,8 @@ class Constitution (Template_Main):
                 wr('<P>')
                 wr('<b>Effective Date of Constitution</b>')
                 wr('<br />')
-                self.render_date_picker (YR, MO, DY)
+                wr('Date: <input type="text" id="datepicker" name="date">')
+#                self.render_date_picker (YR, MO, DY)
                 wr('</P>')
 
                 wr('<P>')

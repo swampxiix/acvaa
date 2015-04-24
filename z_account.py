@@ -117,7 +117,8 @@ def get_user_acct (username, with_pass=False):
         if os.path.exists(a):
             b = rP(a)
             if not with_pass:
-                del b['password']
+                if b.has_key('password'):
+                    del b['password']
             return b
         else:
             return {}
@@ -330,4 +331,18 @@ def save_user_roles(username, roles):
 def acting_as (req):
     c = req.cookies()
     return c.get('actingasuser', None)
+
+def save_manual_account (form):
+    new_userid = get_new_user_id(form.get('fn'), form.get('sn'))
+    destination = os.path.join(ACCTDIR, new_userid)
+    roles = form.get('roles', [])
+    # Force List
+    if type(roles) is ListType:
+        form['roles'] = roles
+    elif type(roles) is StringType:
+        form['roles'] = [roles]
+    wP(form, destination)
+    for role in form['roles']:
+        cache_role(new_userid, role, 'reg')
+
 

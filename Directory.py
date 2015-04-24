@@ -37,7 +37,7 @@ class Directory (Template_Main):
             nums += '<b>Fax</b>: %s' % d.get('fax')
         return nums
 
-    def format_list (self, all):
+    def format_list (self, all, list_type=""):
         wr = self.writeln
         qs = self.request().fields()
         FOR_HIRE = qs.get('consult')
@@ -75,86 +75,103 @@ class Directory (Template_Main):
                     except AttributeError:
                         pass
                     wr('<h3>%s</h3>' % (dname))
-    
-                wr('<table><tr><td>') ####====####
-                ##################
-                # ADDRESS
-                ##################
-                addr = '%s, %s' % (d.get('city'), d.get('state'))
-                if d.get('show_address') == 'hide':
-                    pass
-                elif d.get('show_address') == 'diplomates':
-                    if ILI and IS_DIP:
+
+                if list_type == 'h':
+                    if d.get('institution'):
+                        wr('%s<br>' % (d.get('institution')))
+                    if d.get('country'):
+                        wr('%s<br>' % (d.get('country')))
+                    if d.get('conferred'):
+                        wr('%s' % (d.get('conferred')))
+                elif list_type == 'm':
+                    if d.get('institution'):
+                        wr('%s<br>' % (d.get('institution')))
+                    if d.get('country'):
+                        wr('%s<br>' % (d.get('country')))
+                    if d.get('birthyear') or d.get('deathyear'):
+                        wr('%s&ndash;%s' % (d.get('birthyear', ''), d.get('deathyear', '')))
+                else:
+
+                    wr('<table><tr><td>') ####====####
+                    ##################
+                    # ADDRESS
+                    ##################
+                    addr = '%s, %s' % (d.get('city'), d.get('state'))
+                    if d.get('show_address') == 'hide':
+                        pass
+                    elif d.get('show_address') == 'diplomates':
+                        if ILI and IS_DIP:
+                            addr = self.get_full_addr(d)
+                    elif d.get('show_address') == 'both':
+                        if ILI and (IS_DIP or IS_RES):
+                            addr = self.get_full_addr(d)
+                    elif d.get('show_address') == 'all':
                         addr = self.get_full_addr(d)
-                elif d.get('show_address') == 'both':
-                    if ILI and (IS_DIP or IS_RES):
-                        addr = self.get_full_addr(d)
-                elif d.get('show_address') == 'all':
-                    addr = self.get_full_addr(d)
-                wr('<P>%s</P>' % (addr))
-                wr('<td style="padding-left: 30px;">') ####====####
-                ##################
-                # NUMBERS
-                ##################
-                nums = ''
-                if d.get('show_numbers') == 'hide':
-                    pass
-                elif d.get('show_address') == 'diplomates':
-                    if ILI and IS_DIP:
+                    wr('<P>%s</P>' % (addr))
+                    wr('<td style="padding-left: 30px;">') ####====####
+                    ##################
+                    # NUMBERS
+                    ##################
+                    nums = ''
+                    if d.get('show_numbers') == 'hide':
+                        pass
+                    elif d.get('show_address') == 'diplomates':
+                        if ILI and IS_DIP:
+                            nums = self.get_numbers(d)
+                    elif d.get('show_address') == 'both':
+                        if ILI and (IS_DIP or IS_RES):
+                            nums = self.get_numbers(d)
+                    elif d.get('show_address') == 'all':
                         nums = self.get_numbers(d)
-                elif d.get('show_address') == 'both':
-                    if ILI and (IS_DIP or IS_RES):
-                        nums = self.get_numbers(d)
-                elif d.get('show_address') == 'all':
-                    nums = self.get_numbers(d)
-                wr('<P>%s</P>' % (nums))
-                wr('<td style="padding-left: 30px;">') ####====####
-                ##################
-                # EMAIL
-                ##################
-                email = ''
-                if d.get('show_email') == 'hide':
-                    pass
-                elif d.get('show_email') == 'diplomates':
-                    if ILI and IS_DIP:
+                    wr('<P>%s</P>' % (nums))
+                    wr('<td style="padding-left: 30px;">') ####====####
+                    ##################
+                    # EMAIL
+                    ##################
+                    email = ''
+                    if d.get('show_email') == 'hide':
+                        pass
+                    elif d.get('show_email') == 'diplomates':
+                        if ILI and IS_DIP:
+                            email = d.get('email', '')
+                    elif d.get('show_email') == 'both':
+                        if ILI and (IS_DIP or IS_RES):
+                            email = d.get('email', '')
+                    elif d.get('show_email') == 'all':
                         email = d.get('email', '')
-                elif d.get('show_email') == 'both':
-                    if ILI and (IS_DIP or IS_RES):
-                        email = d.get('email', '')
-                elif d.get('show_email') == 'all':
-                    email = d.get('email', '')
-                wr('<P>%s</P>' % (email))
-                wr('</table>') ####====####
-                wr('</div>')
-
-            if FOR_HIRE:
-                fh_area = d.get('for_hire_areas')
-                if fh_area:
-                    wr('<div>')
-                    wr('<b>Area(s) Served:</b><br />')
-                    fh_area = fh_area.replace('\r', '<br />')
-                    wr(fh_area)
+                    wr('<P>%s</P>' % (email))
+                    wr('</table>') ####====####
                     wr('</div>')
 
-                fh_svcs = d.get('for_hire_services')
-                if fh_svcs:
-                    wr('<div>')
-                    wr('<b>Services Offered:</b><br />')
-                    fh_svcs = fh_svcs.replace('\r', '<br />')
-                    wr(fh_svcs)
-                    wr('</div>')
+                if FOR_HIRE:
+                    fh_area = d.get('for_hire_areas')
+                    if fh_area:
+                        wr('<div>')
+                        wr('<b>Area(s) Served:</b><br />')
+                        fh_area = fh_area.replace('\r', '<br />')
+                        wr(fh_area)
+                        wr('</div>')
 
-                fh_url = d.get('for_hire_url')
-                if fh_url:
-                    wr('<div>')
-                    wr('<a href="%s">%s</a>' % (fh_url, fh_url))
-                    wr('</div>')
+                    fh_svcs = d.get('for_hire_services')
+                    if fh_svcs:
+                        wr('<div>')
+                        wr('<b>Services Offered:</b><br />')
+                        fh_svcs = fh_svcs.replace('\r', '<br />')
+                        wr(fh_svcs)
+                        wr('</div>')
+
+                    fh_url = d.get('for_hire_url')
+                    if fh_url:
+                        wr('<div>')
+                        wr('<a href="%s">%s</a>' % (fh_url, fh_url))
+                        wr('</div>')
 
         wr('</div>')
 
     def writeContent(self):
         wr = self.writeln
         qs = self.request().fields()
+        FOR_HIRE = qs.get('consult')
 
         wr('<h1>%s</h1>' % (self.title()))
 
@@ -184,47 +201,52 @@ class Directory (Template_Main):
             Hs = get_users(utype='h') # Honorary
             Ms = get_users(utype='m') # Memoriam
 
-            wr('<div id="acct-container" class="acct-tabs"> ')
-            wr('<ul class="idTabs"> ')
-            if Ds:
-                wr('<li><a class="selected" href="#tab1">Diplomates</a></li> ')
-            if Rs:
-                wr('<li><a href="#tab2">Candidates</a></li> ')
-            if Es:
-                wr('<li><a href="#tab3">Emeritus Diplomates</a></li> ')
-            if Hs:
-                wr('<li><a href="#tab4">Honorary Diplomates</a></li> ')
-            if Ms:
-                wr('<li><a href="#tab5">In Memoriam</a></li> ')
-            wr('</ul> ')
+            wr('<div role="tabpanel">')
+            wr('<!-- Nav tabs -->')
+            wr('<ul class="nav nav-pills nav-justified" role="tablist">')
 
             if Ds:
-                wr('<div id="tab1">')
+                wr('<li role="presentation" class="active"><a href="#Diplomates" aria-controls="Diplomates" role="tab" data-toggle="tab">Diplomates</a></li>')
+            if Rs:
+                wr('<li role="presentation"><a href="#Candidates" aria-controls="Candidates" role="tab" data-toggle="tab">Candidates</a></li>')
+            if Es and (not FOR_HIRE):
+                wr('<li role="presentation"><a href="#Emeritus" aria-controls="Emeritus Diplomates" role="tab" data-toggle="tab">Emeritus Diplomates</a></li>')
+            if Hs and (not FOR_HIRE):
+                wr('<li role="presentation"><a href="#Honorary" aria-controls="Honorary Diplomates" role="tab" data-toggle="tab">Honorary Diplomates</a></li>')
+            if Ms and (not FOR_HIRE):
+                wr('<li role="presentation"><a href="#Memoriam" aria-controls="In Memoriam" role="tab" data-toggle="tab">In Memoriam</a></li>')
+            wr('</ul>')
+            wr('<!-- Tab panes -->')
+
+            wr('<div class="tab-content">')
+            if Ds:
+                wr('<div role="tabpanel" class="tab-pane active" id="Diplomates">')
                 self.format_list(Ds)
-                wr('</div><!-- tab1 -->')
+                wr('</div>')
             else:
                 if FOR_HIRE:
                     wr('<P>There are no ACVAA members who have marked themselves as for hire at this time.</P>')
 
             if Rs:
-                wr('<div id="tab2">')
+                wr('<div role="tabpanel" class="tab-pane" id="Candidates">')
                 self.format_list(Rs)
-                wr('</div><!-- tab2 -->')
+                wr('</div>')
 
-            if Es:
-                wr('<div id="tab3">')
+            if Es and (not FOR_HIRE):
+                wr('<div role="tabpanel" class="tab-pane" id="Emeritus">')
                 self.format_list(Es)
-                wr('</div><!-- tab3 -->')
+                wr('</div>')
 
-            if Hs:
-                wr('<div id="tab4">')
-                self.format_list(Hs)
-                wr('</div><!-- tab4 -->')
+            if Hs and (not FOR_HIRE):
+                wr('<div role="tabpanel" class="tab-pane" id="Honorary">')
+                self.format_list(Hs, list_type="h")
+                wr('</div>')
 
-            if Ms:
-                wr('<div id="tab5">')
-                self.format_list(Ms)
-                wr('</div><!-- tab5 -->')
+            if Ms and (not FOR_HIRE):
+                wr('<div role="tabpanel" class="tab-pane" id="Memoriam">')
+                self.format_list(Ms, list_type="m")
+                wr('</div>')
+            wr('</div><!-- .tab-content -->')
 
-            wr('</div><!-- acct-container -->')
+            wr('</div><!-- tabpanel -->')
 

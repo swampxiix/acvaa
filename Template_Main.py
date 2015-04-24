@@ -24,28 +24,29 @@ class Template_Main (Page):
     def writeMetaData(self):
         """Bootstrap-required meta tags.
         """
-        wr = self.writeln
-        wr('<meta charset="utf-8">')
-        wr('<meta http-equiv="X-UA-Compatible" content="IE=edge">')
-        wr('<meta name="viewport" content="width=device-width, initial-scale=1">')
+        self.writeln('''
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+            ''')
 
     def writeStyleSheet(self):
-        wr = self.writeln
-        wr('<link rel="shortcut icon" href="/g/favicon.ico" type="image/x-icon" />')
-        wr('<link rel="stylesheet" href="/c/bootstrap.min.css" type="text/css">')
-        wr('<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">')
-        wr('<link rel="stylesheet" href="/c/acva.css" type="text/css">')
-        wr('<link rel="stylesheet" href="/c/acvaa_bootstrap.css" type="text/css">')
-        
+        self.writeln('''
+<link rel="shortcut icon" href="/g/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/c/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/c/acva.css" type="text/css">
+<link rel="stylesheet" href="/c/acvaa_bootstrap.css" type="text/css">
+            ''')
+
 
     def writeJavaScript(self):
-        wr = self.writeln
-        wr('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>')
-        wr('<script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>')
-        wr('<script type="text/javascript" src="/js/jquery.cookie.js"></script>')
-        wr('<script type="text/javascript" src="/js/bootstrap.min.js"></script>')
-        wr('<script type="text/javascript" src="/js/acva.js"></script>')
-        wr('''
+        self.writeln('''
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/acva.js"></script>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -294,92 +295,33 @@ document.write('<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;'+'&#115;&#109;
 
     def writeCalPickJS(self, load_prev=False):
         wr = self.writeln
-        wr('<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>')
-        wr('<script type="text/javascript" src="/js/acva.js"></script>')
-
-        wr('<script type="text/javascript" src="/js/jquery.bgiframe.min.js"></script>')
-        wr('<script type="text/javascript" src="/js/date.js"></script>')
-        wr('<script type="text/javascript" src="/js/jquery.datePicker.js"></script>')
-        wr('<script type="text/javascript">')
         wr('''
-$(function()
-{
-	
-	// initialise the "Select date" link
-	$('#date-pick')
-		.datePicker(
-			// associate the link with a date picker
-			{
-				createButton:false,
-				startDate:'01/01/%s',
-				endDate:'31/12/%s'
-			}
-		).bind(
-			// when the link is clicked display the date picker
-			'click',
-			function()
-			{
-				updateSelects($(this).dpGetSelected()[0]);
-				$(this).dpDisplay();
-				return false;
-			}
-		).bind(
-			// when a date is selected update the SELECTs
-			'dateSelected',
-			function(e, selectedDate, $td, state)
-			{
-				updateSelects(selectedDate);
-			}
-		).bind(
-			'dpClosed',
-			function(e, selected)
-			{
-				updateSelects(selected[0]);
-			}
-		);
-		
-	var updateSelects = function (selectedDate)
-	{
-		var selectedDate = new Date(selectedDate);
-		$('#d option[value=' + selectedDate.getDate() + ']').attr('selected', 'selected');
-		$('#m option[value=' + (selectedDate.getMonth()+1) + ']').attr('selected', 'selected');
-		$('#y option[value=' + (selectedDate.getFullYear()) + ']').attr('selected', 'selected');
-	}
-	// listen for when the selects are changed and update the picker
-	$('#d, #m, #y')
-		.bind(
-			'change',
-			function()
-			{
-				var d = new Date(
-							$('#y').val(),
-							$('#m').val()-1,
-							$('#d').val()
-						);
-				$('#date-pick').dpSetSelected(d.asString());
-			}
-		);
-            ''' % (get_year()-1, get_year()+5))
-
-#        id = self.request().fields().get('id')
-        if not load_prev: # only load default (today) if add, not edit
-            wr('''
-
-	// default the position of the selects to today
-	var today = new Date();
-	updateSelects(today.getTime());
-	
-	// and update the datePicker to reflect it...
-	$('#d').trigger('change');
-            ''')
-        wr('''
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/acva.js"></script>
+<script type="text/javascript" src="/js/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="/js/date.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+$(function() {
+  $( "#datepicker" ).datepicker();
 });
+</script>
             ''')
-
-        wr('</script>')
-
     def writeCalPickCSS(self):
-        self.writeln('<link rel="shortcut icon" href="/g/favicon.ico" type="image/x-icon" />')
-        self.writeln('<link rel="stylesheet" href="/c/reset-fonts-grids.css" type="text/css">')
-        self.writeln('<link rel="stylesheet" href="/c/acva.css" type="text/css">')
-        self.writeln('<link rel="stylesheet" href="/c/cal_picker.css" type="text/css">')
+        wr = self.writeln
+        wr('''
+<link rel="shortcut icon" href="/g/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/c/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/c/jquery-ui.min.css" type="text/css">
+<link rel="stylesheet" href="/c/acva.css" type="text/css">
+<link rel="stylesheet" href="/c/cal_picker.css" type="text/css">
+<link rel="stylesheet" href="/c/acvaa_bootstrap.css" type="text/css">
+            ''')

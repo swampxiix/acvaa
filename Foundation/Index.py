@@ -25,11 +25,11 @@ class Index (Template_Main):
 
         ISA = is_site_admin(self.request())
         if ISA:
-            wr('<div class="button">')
+            wr('<div class="flt_r">')
             if show_travel():
-                wr('<a href="Change_Travel">Hide Scholarship Info</a>')
+                wr('<a class="btn btn-warning" href="Change_Travel" role="button">Hide Scholarship Info</a>')
             else:
-                wr('<a href="Change_Travel">Show Scholarship Info</a>')
+                wr('<a class="btn btn-success" href="Change_Travel" role="button">Show Scholarship Info</a>')
             wr('</div>')
 
 
