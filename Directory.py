@@ -82,7 +82,7 @@ class Directory (Template_Main):
                     if d.get('country'):
                         wr('%s<br>' % (d.get('country')))
                     if d.get('conferred'):
-                        wr('%s' % (d.get('conferred')))
+                        wr('Conferred: %s' % (d.get('conferred')))
                 elif list_type == 'm':
                     if d.get('institution'):
                         wr('%s<br>' % (d.get('institution')))

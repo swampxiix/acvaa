@@ -11,7 +11,7 @@ class UM_Act_as_User (Template_Admin):
 #        wr(username)
         userinfo = get_user_acct(username)
 #        wr(userinfo)
-        hvc = hash_string(userinfo.get('vcode'))
+        hvc = hash_string(userinfo.get('vcode', ''))
 #        wr(hvc)
         ex1 = self.getCookieExpiry('maxAge', y=10)
         ex2 = self.getCookieExpiry('Expires', y=10)

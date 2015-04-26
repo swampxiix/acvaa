@@ -1,6 +1,6 @@
 from Template_Authenticated import Template_Authenticated
 
-from z_account import check_email_address, is_email_registered, save_user_info
+from z_account import get_user_acct, check_email_address, is_email_registered, save_user_info
 
 class Acct_Edit_Info (Template_Authenticated):
 
@@ -9,18 +9,25 @@ class Acct_Edit_Info (Template_Authenticated):
         if self.request()._environ.get('REQUEST_METHOD') == 'POST':
             C = self.request().cookies()
             un, hash = C.get('username'), C.get('hash')
+
+            p = get_user_acct(un)
+
             form = self.request().fields()
             ERROR = None
 
             if (un == form.get('form_username')) and (hash == form.get('form_hash')):
 
                 required = {'fn': 'first name', 'sn': 'surname', 'city': 'city', 'state': 'state', 'email': 'email', }
+                if 'memoriam' in p.get('roles', []):
+                    required = {'fn': 'first name', 'sn': 'surname', }
+
                 for r in required.keys():
                     if not form.get(r):
                         ERROR = 'The field "%s" is required.' % (required.get(r))
 
                 if not ERROR:
-                    ERROR = check_email_address(form.get('email'))
+                    if 'memoriam' not in p.get('roles', []):
+                        ERROR = check_email_address(form.get('email'))
 
                 if not ERROR:
                     if form.get('email') != form.get('original_email'): # user changing email address

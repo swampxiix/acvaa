@@ -156,12 +156,13 @@ class Template_Main (Page):
 <div class="container" id="footer">
   <div class="row">
     <div class="col-md-9 col-md-offset-3">
-    <P>
-    <a href="/Terms">Terms of Use</a> &middot; <a href="mailto:execdir@acvaa.org">Need Help? Contact Us.</a>
-    </P>
-    <P class="legal">
-    Copyright &copy; 1995&ndash;%s American College of Veterinary Anesthesia and Analgesia with all rights reserved.    </P>
-    </P>
+      <P>
+        <a href="/Terms">Terms of Use</a> &middot; <a href="mailto:execdir@acvaa.org">Need Help? Contact Us.</a>
+      </P>
+      <P class="legal">
+        Copyright &copy; 1995&ndash;%s American College of Veterinary Anesthesia and Analgesia with all rights reserved.    </P>
+      </P>
+    </div><!-- .col-md-9 .col-md-offset-3 -->
   </div><!-- .row -->
 </div><!-- #footer -->
             ''' % (get_year()))

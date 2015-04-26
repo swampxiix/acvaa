@@ -19,7 +19,7 @@ class Add_Manual_Account (Template_Admin):
             wr('<h1>%s</h1>' % (self.title()))
             wr('''
 <P><em>This form should only be used if the user will not need to log into the ACVAA website.</em></P>
-<div id="acct-container" class="acct-tabs"> 
+<div id="acct-container" class="acct-tabs">
 
 <h2>Contact Information</h2>
 <form method="POST" action="Add_Manual_Account" class="form-inline" role="form">
@@ -83,31 +83,39 @@ class Add_Manual_Account (Template_Admin):
 <label for="institution">Institution(s)</label>
 <input type="text" class="form-control" id="institution" name="institution">
 </div>
-<br>
-
-<div class="form-group">
-<label for="birthyear">Born</label>
-<input type="text" class="form-control" id="birthyear" name="birthyear" size="4">
-</div>
-<div class="form-group">
-<label for="deathyear">Died</label>
-<input type="text" class="form-control" id="deathyear" name="deathyear" size="4">
-</div>
-<br>
-<div class="form-group">
-
                 ''')
 
+            wr('<div class="form-group">')
             for r in ALL_ROLES:
                 wr('''
 <label class="checkbox-inline">
   <input type="checkbox" id="%s" name="roles" value="%s"> %s
 </label>
                     ''' % (r, r, r.capitalize()))
+            wr('</div><br>')
+
             wr('''
+<div class="form-group memoriam_input" style="display: none;">
+<label for="birthyear">Born</label>
+<input type="text" class="form-control" id="birthyear" name="birthyear" size="4">
+</div>
+<div class="form-group memoriam_input" style="display: none;">
+<label for="deathyear">Died</label>
+<input type="text" class="form-control" id="deathyear" name="deathyear" size="4">
 </div>
 <br>
-<input type="submit" value="Save Account" class="btn btn-orange">
 
+<div class="form-group" id="conferred_input" style="display: none;">
+<label for="conferred">Year Conferred</label>
+<input type="text" class="form-control" id="conferred" name="conferred">
+</div>
+
+
+
+
+
+<br>
+<input type="submit" value="Save Account" class="btn btn-orange">
+</form>
 </div><!-- acct-container -->
                 ''')
