@@ -38,20 +38,10 @@ class UM_Index (Template_Admin):
             wr('<a href="#%s">%s</a>' % (letter, letter.capitalize()))
         wr('</P>')
 
-        wr('<table border="1">')
-        wr('<tr>')
-        wr('<th>&nbsp;')
-        wr('<th colspan="6">Roles')
-        
-        wr('<tr>')
-        wr('<th>Name')
-        wr('<th>A')
-        wr('<th>D')
-        wr('<th>R')
-        wr('<th>E')
-        wr('<th>H')
-        wr('<th>M')
-        wr('<th colspan="4">Actions')
+        wr('''
+<table border="1"><tr><th>&nbsp;<th colspan="6">Roles        
+<tr><th>Name<th>A<th>D<th>R<th>E<th>H<th>M<th>Actions
+            ''')
 
         for ak in aks:
             ud = all[ak]
@@ -62,23 +52,36 @@ class UM_Index (Template_Admin):
                 wr('<a name="%s"></a>' % (firstletter))
                 DISPLAYLETTERS.append(firstletter)
             wr('%s, %s' % ( ud.get('sn'), ud.get('fn') ))
-            for r in ALL_ROLES:
-                wr('<td>')
-                if r in ud.get('roles'):
-                    wr('<img src="/g/on.png" width="14" height="14" alt="is %s" title="is %s" />' % (r, r))
-                else:
-                    wr('<img src="/g/off.png" width="14" height="14" alt="not %s" title="not %s" />' % (r, r))
 
+            ROLEICONS = (
+                          ('admin', 'fa-pencil'),
+                          ('diplomate', 'fa-user-md'),
+                          ('resident', 'fa-graduation-cap'),
+                          ('emeritus', 'fa-trophy'),
+                          ('honorary', 'fa-certificate'),
+                          ('memoriam', 'fa-cloud-upload'),
+                            )
+            for role, icon in ROLEICONS:
+                color = '#E0E0E0'
+                if role in ud.get('roles', []):
+                    color = '#006600'
+                wr('<td><i class="fa %s" style="color: %s;"></i>' % (icon, color))
 
             if 'master' in ud.get('roles'):
                 wr('<td class="t10 hint" colspan="4">You cannot manage the master account.</td>')
             elif self.request().cookies().get('username') == ud.get('username'):
                 wr('<td class="t10 hint" colspan="4">You cannot manage your own account.</td>')
             else:
-                wr('<td class="t10"><a href="UM_Act_as_User?u=%s">Act as User</a>' % (ud.get('username')))
-                wr('<td class="t10"><a href="UM_Roles_Form?u=%s">Edit Roles</a>' % (ud.get('username')))
-                wr('<td class="t10"><a href="UM_Reset_User_Pass?u=%s">Reset Password</a>' % (ud.get('username')))
-                wr('<td class="t10"><a href="UM_Delete_User?u=%s">Delete User</a>' % (ud.get('username')))
+                un = ud.get('username')
+                wr('''<td>
+<select class="form-control" onChange="javascript:window.location = this.options[this.selectedIndex].value">
+  <option value="#">Select...</option>
+  <option value="UM_Act_as_User?u=%s">Act as User</option>
+  <option value="UM_Roles_Form?u=%s">Edit Roles</option>
+  <option value="UM_Reset_User_Pass?u=%s">Reset Password</option>
+  <option value="UM_Delete_User?u=%s">Delete User</option>
+</select>
+                    ''' % (un, un, un, un))
 
         wr('</table>')
 

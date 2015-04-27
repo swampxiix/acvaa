@@ -275,6 +275,7 @@ def unregister_email_addr (userid):
 def cache_role (username, role, action):
     if username:
         username = username.lower()
+        REG = ''
         if role == 'resident':
             REG = RESD_REGISTER
         if role == 'diplomate':
@@ -285,16 +286,17 @@ def cache_role (username, role, action):
             REG = HONO_REGISTER
         if role == 'memoriam':
             REG = MEMO_REGISTER
-        L = rP(REG)
-        if not L: L = []
-        if action == 'reg':
-            if username not in L:
-                L.append(username)
-                wP(L, REG)
-        if action == 'dereg':
-            if username in L:
-                del L[L.index(username)]
-                wP(L, REG)
+        if REG:
+            L = rP(REG)
+            if not L: L = []
+            if action == 'reg':
+                if username not in L:
+                    L.append(username)
+                    wP(L, REG)
+            if action == 'dereg':
+                if username in L:
+                    del L[L.index(username)]
+                    wP(L, REG)
 
 #==========================================
 # Admin Instantiated Modifications
