@@ -55,7 +55,7 @@ class Directory (Template_Main):
             if d.get('sec_policy') == 'paranoid':
                 pass
             else:
-                wr('<div>')
+                wr('<div class="dir-entry">')
                 dname = ''
                 if d.get('salute'):
                     dname = '%s ' % (d['salute'])
@@ -74,7 +74,7 @@ class Directory (Template_Main):
                         wr(get_flag(d.get('country'), align="right"))
                     except AttributeError:
                         pass
-                    wr('<h3>%s</h3>' % (dname))
+                    wr('<h2>%s</h2>' % (dname))
 
                 if list_type == 'h':
                     if d.get('institution'):
@@ -141,32 +141,33 @@ class Directory (Template_Main):
                         email = d.get('email', '')
                     wr('<P>%s</P>' % (email))
                     wr('</table>') ####====####
-                    wr('</div>')
 
                 if FOR_HIRE:
                     fh_area = d.get('for_hire_areas')
                     if fh_area:
-                        wr('<div>')
+                        wr('<p>')
                         wr('<b>Area(s) Served:</b><br />')
                         fh_area = fh_area.replace('\r', '<br />')
                         wr(fh_area)
-                        wr('</div>')
+                        wr('</p>')
 
                     fh_svcs = d.get('for_hire_services')
                     if fh_svcs:
-                        wr('<div>')
+                        wr('<p>')
                         wr('<b>Services Offered:</b><br />')
                         fh_svcs = fh_svcs.replace('\r', '<br />')
                         wr(fh_svcs)
-                        wr('</div>')
+                        wr('</p>')
 
                     fh_url = d.get('for_hire_url')
                     if fh_url:
-                        wr('<div>')
+                        wr('<p>')
                         wr('<a href="%s">%s</a>' % (fh_url, fh_url))
-                        wr('</div>')
+                        wr('</p>')
 
-        wr('</div>')
+                wr('</div><!-- .dir-entry -->')
+
+        wr('</div><!-- directory -->')
 
     def writeContent(self):
         wr = self.writeln
@@ -202,20 +203,24 @@ class Directory (Template_Main):
             Ms = get_users(utype='m') # Memoriam
 
             wr('<div role="tabpanel">')
-            wr('<!-- Nav tabs -->')
-            wr('<ul class="nav nav-pills nav-justified" role="tablist">')
 
-            if Ds:
-                wr('<li role="presentation" class="active"><a href="#Diplomates" aria-controls="Diplomates" role="tab" data-toggle="tab">Diplomates</a></li>')
-            if Rs:
-                wr('<li role="presentation"><a href="#Candidates" aria-controls="Candidates" role="tab" data-toggle="tab">Candidates</a></li>')
-            if Es and (not FOR_HIRE):
-                wr('<li role="presentation"><a href="#Emeritus" aria-controls="Emeritus Diplomates" role="tab" data-toggle="tab">Emeritus Diplomates</a></li>')
-            if Hs and (not FOR_HIRE):
-                wr('<li role="presentation"><a href="#Honorary" aria-controls="Honorary Diplomates" role="tab" data-toggle="tab">Honorary Diplomates</a></li>')
-            if Ms and (not FOR_HIRE):
-                wr('<li role="presentation"><a href="#Memoriam" aria-controls="In Memoriam" role="tab" data-toggle="tab">In Memoriam</a></li>')
-            wr('</ul>')
+            if FOR_HIRE:
+                pass
+            else:
+                wr('<!-- Nav tabs -->')
+                wr('<ul class="nav nav-pills nav-justified" role="tablist">')
+
+                if Ds:
+                    wr('<li role="presentation" class="active"><a href="#Diplomates" aria-controls="Diplomates" role="tab" data-toggle="tab">Diplomates</a></li>')
+                if Rs:
+                    wr('<li role="presentation"><a href="#Candidates" aria-controls="Candidates" role="tab" data-toggle="tab">Candidates</a></li>')
+                if Es:
+                    wr('<li role="presentation"><a href="#Emeritus" aria-controls="Emeritus Diplomates" role="tab" data-toggle="tab">Emeritus Diplomates</a></li>')
+                if Hs:
+                    wr('<li role="presentation"><a href="#Honorary" aria-controls="Honorary Diplomates" role="tab" data-toggle="tab">Honorary Diplomates</a></li>')
+                if Ms:
+                    wr('<li role="presentation"><a href="#Memoriam" aria-controls="In Memoriam" role="tab" data-toggle="tab">In Memoriam</a></li>')
+                wr('</ul>')
             wr('<!-- Tab panes -->')
 
             wr('<div class="tab-content">')
