@@ -68,6 +68,11 @@ class Template_Main (Page):
 <div class="container" id="body-container">
   <div class="row">
     <!-- LEFT MENU COLUMN ###################################################### -->
+    <div class="col-md-3" id="mobile-side-menu">
+      <div id="show-mobile-menu" class="btn btn-orange btn-sm">
+        Show Menu
+      </div>
+    </div>
     <div class="col-md-3" id="side-menu">
             ''')
         self.writeNav()
