@@ -20,11 +20,15 @@ class Index (Template_Main):
             wr('</div>')
 
         wr('<h1>%s</h1>' % (self.title()))
+
         wr('<div class="sb"><div class="st"><div class="t12b">Job Categories</div>')
         for c in JOB_CATS:
             bookmark = c.split(',')[0].lower()
             wr('<p><a href="#%s">%s</a></p>' % (bookmark, c))
+        wr('<img src="/g/question_dog.png" style="margin-left: -20px;"><br>')
+        wr('<b>Got a job to post?</b> Please contact the <a href="mailto:execdir@acvaa.org">ACVAA Executive Secretary</a>.')
         wr('</div></div>')
+
 
         JBC = get_jobs_by_cat()
 
