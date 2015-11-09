@@ -1,178 +1,95 @@
 from acva.Template_Main import Template_Main
 
+from acva.z_constants import JOB_CATS, compnum
+from acva.z_account import is_site_admin
+from time import strftime
+from z_jobs import get_jobs_by_cat, is_expired, get_new_job_ID
+
+synonyms = {'Institution, Industry or Private Practice': ['Institution, Industry or Public Practice']}
+
 class Index_2 (Template_Main):
     def title(self):
         return 'Jobs & Available Positions'
 
     def writeContent(self):
         wr = self.writeln
+        IS_ADMIN = is_site_admin(self.request())
+        if IS_ADMIN:
+            wr('<div class="button">')
+            wr('<a href="Job_Form">+ Add Job</a>')
+            wr('</div>')
+
         wr('<h1>%s</h1>' % (self.title()))
 
-        wr('''
-<div class="sb">
-<div class="st">
-<div class="t12b">Job Categories</div>
-<p><a href="#institution">Institution, Industry, or Public Practice</a></p>
-<p><a href="#residency">Residency</a></p>
-<p><a href="#internship">Internship</a></p>
-<p><a href="#technician">Technician</a></p>
-<p><a href="#consultant">Professional Consultant</a></p>
-</div>
-</div>
-            ''')
+        wr('<div class="sb"><div class="st"><div class="t12b">Job Categories</div>')
+        for c in JOB_CATS:
+            bookmark = c.split(',')[0].lower()
+            wr('<p><a href="#%s">%s</a></p>' % (bookmark, c))
+        wr('<img src="/g/question_dog.png" style="margin-left: -20px;"><br>')
+        wr('<b>Got a job to post?</b> Please contact the <a href="mailto:execdir@acvaa.org">ACVAA Executive Secretary</a>.')
+        wr('</div></div>')
 
-        wr('''
-<a name="institution"></a>
-<h2>
-Institution, Industry, or Public Practice
-</h2>
+        JBC = get_jobs_by_cat()
 
-<ol class="dec">
+        if self.request().fields().get('sv'):
+            self.render_special_msg('Job saved.')
 
-<li> <a href="Display?id=0001">Senior Clinician in Anaesthesia and Analgesia</a>
-    <br />
-    The Animal Health Trust (AHT)
+        for c in JOB_CATS:
+            wr('<a name="%s"></a>' % (c.split(',')[0].lower()))
+            wr('<h2>%s</h2>' % (c))
+            deezjobs = JBC.get(c)
+            wr(len(deezjobs.keys()))
 
-<li> <a href="Display?id=0002">Veterinary Anesthesiologist</a>
-    <br />
-    The Ross University School of Veterinary Medicine (RUSVM)
 
-<li> <a href="Display?id=0003">Assistant or Associate Clinical Professor in Comparative Anesthesia</a>
-    <br />
-    Department of Veterinary Clinical Sciences 
-    <br />
-    College of Veterinary Medicine
-    <br />
-    University of Minnesota
+            synlist = synonyms.get(c, [])
+            for syn in synlist:
+                deezjobs = dict(deezjobs, **JBC.get(syn, {}))
 
-<li> <a href="Display?id=0004">Clinical Instructor of Anesthesia</a>
-    <br />
-    Department of Clinical Sciences
-    <br />
-    College of Veterinary Medicine
-    <br />
-    Auburn University 
+            if deezjobs:
+                FOUND_GOOD = False
+                for jk in deezjobs.keys():
+                    m, d, y = deezjobs.get(jk, {}).get('expires', [0,0,0])
+                    if not is_expired(m,d,y):
+                        FOUND_GOOD = True
+                if FOUND_GOOD:
+                    djk = deezjobs.keys()
+                    djk.sort(compnum)
+                    wr('<ol class="dec">')
+                    for id in djk:
+                        SHOW = False
+                        jd = deezjobs.get(id)
+                        m, d, y = jd.get('expires', [0,0,0])
+                        EXPIRED = is_expired(m,d,y)
+                        if EXPIRED:
+                            if IS_ADMIN:
+                                SHOW = True
+                        else:
+                            SHOW = True
 
-<li> <a href="Display?id=0009">Cornell Clinical Fellows</a>
-    <br />
-    College of Veterinary Medicine
-    <br />
-    Cornell University 
+                        if SHOW:
+                            if EXPIRED:
+                                wr('<li style="background-color: #DDD; padding: 10px;">')
+                            else:
+                                wr('<li>')
+                            wr('<a href="Display?jid=%s">%s</a><br />' % (id, jd.get('job_title')))
+                            wr(jd.get('job_inst'))
+                            if jd.get('job_dept'):
+                                wr('<br />%s' % (jd.get('job_dept')))
+                            wr('<br /><small style="color: #BBB;">Posted: ')
+                            wr(strftime("%b. %d, %Y", jd.get('posted')))
+                            wr(' &middot; Expires: ')
+                            wr(strftime("%b. %d, %Y", jd.get('exp_tuple')))
+                            wr('</small>')
+                            if IS_ADMIN:
+                                wr('<br />')
+                                wr('<a href="Job_Form?jid=%s"><img src="/g/edit.png" alt="edit" width="17" height="17" border="0" /></a>' % (id))
+                                wr('<a href="Delete_Job?jid=%s"><img src="/g/delete.png" alt="delete" width="17" height="17" border="0" /></a>' % (id))
+                            if EXPIRED:
+                                wr('<span style="padding-left: 10px; font-weight: bold; color: #F00;">EXPIRED</span>')
 
-<li> <a href="Display?id=0010">Locum in Anaesthesiology</a>
-    <br />
-    Centre Hospitalier Universitaire V&eacute;t&eacute;rinaire (Chuv) 
-    <br />
-    Facult&eacute; De M&eacute;decine V&eacute;t&eacute;rinair 
+                    wr('</ol>')
+                else:
+                    wr('<p>No positions available at this time.</p>')
+            else:
+                wr('<p>No positions available at this time.</p>')
 
-<li> <a href="Display?id=0011">Assistant Professor (Oberassistent) Emergency &amp; Critical Care Veterinary Medicine</a>
-    <br />
-    Vetsuisse Faculty
-    <br />
-    University of Zurich
-
-<li> <a href="Display?id=0012">Chair</a>
-    <br />
-    Department of Clinical Sciences
-    <br />
-    Cummings School of Veterinary Medicine
-    <br />
-    Tufts University 
-
-<li> <a href="Display?id=0013">Chair Position</a>
-    <br />
-    Department of Clinical Sciences
-    <br />
-    The College of Veterinary Medicine
-    <br />
-    Cornell University
-
-<li> <a href="Display?id=0014">Assistant Head of R&amp;D</a>
-    <br />
-    Jurox
-
-<li> <a href="Display?id=0020">Postdoctoral Fellowships</a>
-    <br />
-    Vice Rectorate of Research
-    <br />
-    Vetmeduni Vienna
-
-</ol>
-
-<a name="residency"></a>
-<h2>
-Residency
-</h2>
-
-<ol class="dec">
-
-<li> <a href="Display?id=0015">Residency in Veterinary Anaesthesia and Analgesia</a>
-    <br />
-    Section of Anaesthesiology
-    <br />
-    Vetsuisse Faculty
-    <br />
-    University of Zurich
-
-<li> <a href="Display?id=0016">Resident Position(s)</a>
-    <br />
-    William R. Pritchard Veterinary Medical Teaching Hospital
-    <br />
-    School of Veterinary Medicine
-    <br />
-    University of California
-
-<li> <a href="Display?id=0017">Anesthesiology and Pain Management Resident Position</a>
-    <br />
-    School of Veterinary Medicine
-    <br />
-    The University of Wisconsin
-
-<li> <a href="Display?id=0021">Anesthesia Residency</a>
-    <br />
-    Virginia-Maryland Regional College of Veterinary Medicine
-
-</ol>
-
-<a name="internship"></a>
-<h2>
-Internship
-</h2>
-
-<ol class="dec">
-
-<li> <a href="Display?id=0018">Internships (3)</a>
-    <br />
-    Small Animal Anaesthesia
-    <br />
-    Liverpool University
-
-</ol>
-
-<a name="technician"></a>
-<h2>
-Technician
-</h2>
-
-<ol class="dec">
-
-<li> <a href="Display?id=0019">Anesthesia Technician / Veterinary Technician I</a>
-    <br />
-    Veterinary Medicine Teaching Hospital
-    <br />
-    College of Veterinary Medicine
-    <br />
-    Virginia Tech.
-
-</ol>
-
-<a name="consultant"></a>
-<h2>
-Professional Consultant
-</h2>
-
-<p>
-No positions available at this time.
-</p>
-
-            ''')

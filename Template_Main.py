@@ -272,7 +272,7 @@ class Template_Main (Page):
                 self.write(' SELECTED')
             wr('>%s</option>' % (i))
         wr('</select>')
-        wr('<a href="#" id="date-pick"><img src="/g/calendar.png" alt="" width="16" height="16" border="0"></a>')
+#        wr('<a href="#" id="date-pick"><img src="/g/calendar.png" alt="" width="16" height="16" border="0"></a>')
 
 
 ###############################################################################

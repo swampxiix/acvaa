@@ -1,3 +1,4 @@
+import time
 from acva.Template_Admin import Template_Admin
 
 from acva.z_constants import JOB_CATS
@@ -44,9 +45,12 @@ class Job_Form (Template_Admin):
             wr('<span class="req">required</span>')
             wr('</div>')
 
+            today = time.localtime(time.time())
+            tdyD, tdyM, tdyY = today.tm_mday, today.tm_mon, today.tm_year
+            tdL = [tdyM, tdyD, tdyY]
             wr('<div style="margin: 7px 0px 7px 0px;">')
             wr('<b>Expiration Date</b><br />')
-            expm, expd, expy = int(jp.get('expires', [0,0,0])[0]), int(jp.get('expires', [0,0,0])[1]), int(jp.get('expires', [0,0,0])[2])
+            expm, expd, expy = int(jp.get('expires', tdL)[0]), int(jp.get('expires', tdL)[1]), int(jp.get('expires', tdL)[2])
             self.render_date_picker(expy, expm, expd, dname="expires")
             wr('<span class="req">required</span>')
             wr('</div>')
