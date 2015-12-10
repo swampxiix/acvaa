@@ -25,14 +25,14 @@ class Dues (Template_Authenticated):
         wr('<h1>%s</h1>' % (self.title()))
         wr('''
 
-<P><b>Amount</b>: for 2015 = <b>$450</b></P>
-<P><b>Due</b>: April 1, 2015</P>
+<P><b>Amount</b>: for 2016 = <b>$450</b></P>
+<P><b>Due</b>: April 1, 2016</P>
 <P><b>Methods of Payment</b>:
 <ol><li> Check made out to ACVAA and mailed to the ACVAA Executive Secretary.
 <li> Credit Card by communicating the Visa or MasterCard numbers and expiration date to the Executive Secretary.
 <li> PayPal by clicking on the "Pay Dues" button on this page. This will take you to a payment authorization site which will allow you to pay your dues either with a credit card (Visa, MasterCard, American Express or Discover) or through a PayPal Account.
 </P>
-<P><b>Executive Secretary for 2015</b>: Dr. Lydia Donaldson, P.O. Box 1100, Middleburg, VA 20118</P>
+<P><b>Executive Secretary</b>: Dr. Lydia Donaldson, P.O. Box 1100, Middleburg, VA 20118</P>
 <blockquote>
 <h2>ACVAA Bylaws, Article VI - Dues</h2>
 <P>
