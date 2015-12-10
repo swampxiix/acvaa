@@ -46,7 +46,8 @@ class Constitution (Template_Main):
 
             ci = get_constitution_info()
             if ci:
-                effdate = '/'.join(ci.get('date', []))
+#                effdate = '/'.join(ci.get('date', []))
+                effdate = ci.get('date', '')
                 filename = ci.get('datafile', '')
                 msg = ci.get('message', '')
                 fileurl = os.path.join(DOC_CONST_DIR.replace(BASEDIR, ''), filename)

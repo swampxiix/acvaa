@@ -13,10 +13,12 @@ DOC_RPT_DIR = os.path.join(DOCS_DIR, 'annual_reports')
 DOC_CONST_INFO = os.path.join(DOC_CONST_DIR, '.info')
 
 def save_constitution (form):
-    try:
-        M, D, Y = form.get('date')
-    except TypeError:
-        M, D, Y, = form.get('date').split('/')
+#     try:
+#         M, D, Y = form.get('date')
+#     except TypeError:
+#         M, D, Y, = form.get('date').split('/')
+    M, D, Y, = form.get('date').split('/')
+
     # Save data file
     fobj = form.get('datafile') # existence of file already checked
     contents, filename = fobj.value, fobj.filename
