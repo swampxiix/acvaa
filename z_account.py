@@ -108,6 +108,19 @@ def is_site_admin (req):
                 ISA = True
     return ISA
 
+def is_rtc (req):
+    # pass in self.request()
+    irtc = False
+    c = req.cookies()
+    username, hash = c.get('username'), c.get('hash')
+    if username:
+        username = username.lower()
+        userpick = get_user_acct(username)
+        if hash == hash_string(userpick.get('vcode', '')):
+            if 'rtc' in userpick.get('roles'):
+                irtc = True
+    return irtc
+
 ######################################################
 # Accessors
 
