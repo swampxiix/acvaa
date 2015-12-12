@@ -2,7 +2,8 @@ import sha, os, random, glob
 
 from z_constants import ACCTDIR, rP, wP, DIPLSTR, RESDSTR, HARV_DIPL, \
     HARV_RESD, EMAIL_REGISTER, compnum, \
-    DIPL_REGISTER, RESD_REGISTER, EMER_REGISTER, HONO_REGISTER, MEMO_REGISTER, ALL_ROLES
+    DIPL_REGISTER, RESD_REGISTER, EMER_REGISTER, HONO_REGISTER, MEMO_REGISTER, ALL_ROLES, \
+    RTC_REGISTER
 
 from z_email import send_reset_password, send_registration_confirm
 
@@ -166,6 +167,8 @@ def get_users (utype):
         REG = HONO_REGISTER
     elif utype in ['memoriam', 'm']:
         REG = MEMO_REGISTER
+    elif utype in ['rtc']:
+        REG = RTC_REGISTER
     else:
         return {}
 
@@ -286,6 +289,8 @@ def cache_role (username, role, action):
             REG = HONO_REGISTER
         if role == 'memoriam':
             REG = MEMO_REGISTER
+        if role == 'rtc':
+            REG = RTC_REGISTER
         if REG:
             L = rP(REG)
             if not L: L = []

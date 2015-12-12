@@ -40,7 +40,7 @@ class UM_Index (Template_Admin):
 
         wr('''
 <table border="1"><tr><th>&nbsp;<th colspan="6">Roles        
-<tr><th>Name<th>A<th>D<th>R<th>E<th>H<th>M<th>Actions
+<tr><th>Name<th>A<th>D<th>R<th>E<th>H<th>M<th><small>RTC</small><th>Actions
             ''')
 
         for ak in aks:
@@ -60,6 +60,7 @@ class UM_Index (Template_Admin):
                           ('emeritus', 'fa-trophy'),
                           ('honorary', 'fa-certificate'),
                           ('memoriam', 'fa-cloud-upload'),
+                          ('rtc', 'fa-clipboard'),
                             )
             for role, icon in ROLEICONS:
                 color = '#E0E0E0'
