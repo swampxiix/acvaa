@@ -24,6 +24,19 @@ def add_category (catname):
     else:
         return True # indicates error
 
+def edit_category (oldname, newname):
+    mapdict = get_rtc_name_map()
+    CATGUID = False
+    for guid in mapdict.keys():
+        catstring = mapdict[guid]
+        if catstring == oldname:
+            CATGUID = guid
+    if CATGUID:
+        mapdict[CATGUID] = newname
+        wP(mapdict, RTC_MAP_FILE)
+    else:
+        return True # indicates error
+
 def delete_category (catname):
     """
     Category_Delete.py already checks to make sure there are
