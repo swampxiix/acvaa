@@ -1,6 +1,6 @@
 from acva.Template_RTC import Template_RTC
 from acva.z_forms import submit, hidden
-from z_rtc import delete_category, get_rtc_categories, get_rtc_name_map
+from z_rtc import delete_category, get_rtc_categories, get_guid_by_name
 
 class Category_Delete (Template_RTC):
 
@@ -23,11 +23,7 @@ class Category_Delete (Template_RTC):
             qs = self.request().fields()
             catname = qs.get('cat')
             if catname:
-                namemap = get_rtc_name_map()
-                CATGUID = False
-                for guid in namemap.keys():
-                    if namemap[guid] == catname:
-                        CATGUID = guid
+                CATGUID = get_guid_by_name(catname)
                 catdict = get_rtc_categories()
                 rezcount = len(catdict.get(CATGUID, []))
                 if rezcount > 0:
