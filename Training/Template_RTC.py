@@ -1,6 +1,6 @@
-from Template_Main import Template_Main
+from acva.Template_Main import Template_Main
 
-from z_account import is_rtc
+from acva.z_account import is_rtc
 
 class Template_RTC (Template_Main):
 

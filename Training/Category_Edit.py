@@ -1,4 +1,4 @@
-from acva.Template_RTC import Template_RTC
+from Template_RTC import Template_RTC
 from acva.z_forms import submit, hidden, text
 from z_rtc import edit_category
 

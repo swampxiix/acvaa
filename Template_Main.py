@@ -19,7 +19,9 @@ class Template_Main (Page):
         self.writeMetaData() # was second
         self.writeTitle() # was first
         self.writeStyleSheet()
+        self.addStyleSheet()
         self.writeJavaScript()
+        self.addJavaScript()
 
     def writeMetaData(self):
         """Bootstrap-required meta tags.
@@ -39,6 +41,8 @@ class Template_Main (Page):
 <link rel="stylesheet" href="/c/acvaa_bootstrap.css" type="text/css">
             ''')
 
+    def addStyleSheet(self):
+        pass
 
     def writeJavaScript(self):
         self.writeln('''
@@ -52,6 +56,9 @@ class Template_Main (Page):
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
             ''')
+
+    def addJavaScript(self):
+        pass
 
     def writeBody(self):
         wr = self.writeln

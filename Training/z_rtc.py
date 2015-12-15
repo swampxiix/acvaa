@@ -1,4 +1,4 @@
-import os.path, random
+import os.path, random, glob
 from acva.z_constants import BASEDIR, rP, wP
 from acva.z_docs import sanitize_file_name
 from acva.z_events import cleanse_url
@@ -74,6 +74,7 @@ def add_resource (form):
         form['url'] = cleanse_url(form.get('url'))
     if form.get('filename') and form.get('contents'):
         filename = sanitize_file_name(form.get('filename'))
+        form['filename'] = filename
         open(os.path.join(FILEDIR, filename), 'wb').write(form.get('contents'))
     try:
         del form['contents']
@@ -85,4 +86,33 @@ def add_resource (form):
     catdict = get_rtc_categories()
     catdict[form.get('category')].append(FILEID)
     wP(catdict, RTC_CAT_FILE)
+
+def get_category_by_guid (guid):
+    nm = get_rtc_name_map()
+    return nm.get(guid, '')
+
+def pretty_size (size):
+    size = float(size)
+    Mb = 1024 * 1024
+    kb = 1024
+    if size > Mb:
+        return str(round(size/Mb, 1)) + 'M'
+    if size > 1024:
+        return str(round(size/kb, 1)) + 'k'
+
+def get_resources ():
+    allfiles = glob.glob(os.path.join(REZDIR, '*'))
+    rezlist = []
+    for file in allfiles:
+        pick = rP(file)
+        catguid = pick.get('category')
+        pick['category'] = get_category_by_guid(catguid)
+        if pick.get('filename'):
+            filepath = os.path.join(FILEDIR, pick.get('filename'))
+            pick['filesize'] = pretty_size(os.path.getsize(filepath))
+        rezlist.append(pick)
+    return rezlist
+
+
+
 

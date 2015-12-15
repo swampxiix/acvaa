@@ -1,4 +1,4 @@
-from acva.Template_RTC import Template_RTC
+from Template_RTC import Template_RTC
 from z_rtc import add_category
 
 class Category_Add (Template_RTC):
