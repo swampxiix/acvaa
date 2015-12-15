@@ -26,7 +26,7 @@ class Manage (Template_RTC):
             wr('<tr><td>Title:<td>')
             wr(text('title'))
             wr('<td class="req">required')
-            wr('<tr><td colspan="6" class="req">You must either upload a file, or provide a web address for this resource.<br>You can do both.')
+            wr('<tr><td colspan="3" class="req">You must either upload a file, or provide a web address for this resource.<br>You can do both.')
             wr('<tr><td>File Upload:<td><input type="file" name="datafile">')
             wr('<tr><td>Web Address:<td>%s' % (text('url')))
             wr('<tr><td>Description:<td><textarea name="description"></textarea>')

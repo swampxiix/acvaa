@@ -63,7 +63,7 @@ class Index (Template_Authenticated):
                 wr('</td>')
                 wr('<td>')
                 if rez.get('url'):
-                    wr('<a href="%s">Web link</a>' % (rez.get('url')))
+                    wr('<a href="%s" title="%s">Web link</a>' % (rez.get('url'), rez.get('url')))
                 else:
                     wr('&nbsp;')
                 wr('</td>')
@@ -71,9 +71,8 @@ class Index (Template_Authenticated):
                 if is_rtc(self.request()):
                     wr('<td>')
                     wr('''
-<a href=""><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;<a href=""><i class="fa fa-trash"></i></a>
-                    ''')
-
+<a href="Resource_Edit?id=%s"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;<a href="Resource_Delete?id=%s"><i class="fa fa-trash"></i></a>
+                    ''' % (rez.get('id'), rez.get('id')))
                     wr('</td>')
 
 

@@ -1,5 +1,5 @@
 from Template_RTC import Template_RTC
-from z_rtc import add_resource
+from z_rtc import does_file_exist, add_resource
 
 class Resource_Add (Template_RTC):
     def writeContent(self):
@@ -23,10 +23,13 @@ class Resource_Add (Template_RTC):
 
             del form['datafile']
 
-            if form.get('filename') or form.get('url'):
-                pass
-            else:
-                ERROR.append('You must either upload a file, or specify a web address.')
+            if form.get('filename'):
+                conflict = does_file_exist(form.get('filename'))
+                if conflict:
+                    ERROR.append('A resource already exists that points to a local file with the same name.')
+            else: # no upload
+                if not form.get('url'): # no url
+                    ERROR.append('You must either upload a file, or specify a web address.')
 
             if ERROR:
                 for line in ERROR:

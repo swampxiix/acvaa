@@ -3,6 +3,8 @@ from acva.z_forms import submit, hidden
 from z_rtc import delete_category, get_rtc_categories, get_guid_by_name
 
 class Category_Delete (Template_RTC):
+    def title(self):
+        return 'Confirm Category Deletion'
 
     def writeContent(self):
         wr = self.writeln
@@ -30,7 +32,7 @@ class Category_Delete (Template_RTC):
                     wr('<h1 class="error">Sorry, you can only delete a category with zero Training Resources in it.</h1>')
                     wr('<P>Please <a href="javascript:history.go(-1)">go back</a> &amp; try again.</P>')
                 else:
-                    wr('<h1>Confirm Category Deletion</h1>')
+                    wr('<h1>%s</h1>' % (self.title()))
                     wr('<P>Are you sure you want to delete the Resource Category named: %s?</P>' % (catname))
                     wr('<form action="Category_Delete" method="POST">')
                     wr(hidden('rm_category', catname))
