@@ -14,8 +14,29 @@ class Index (Template_Main):
 <P><a href="/Foundation/">Introduction</a></P>
 <P><a href="/Foundation/Donors">List of Donors</a></P>
 
-<P>Click the button to make a donation via PayPal.</P>
-<P style="text-align: center;"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UYE3G92TAWBYA" title="Donate to the ACVAA Foundation"><img src="/g/btn_donateCC_LG.gif" alt="Donate to the ACVAA Foundation" width="147" height="47" border="0"></a></P>
+<p>
+You can make donations via authorize.net or PayPal.
+</p>
+
+<!-- (c) 2005, 2016. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal" style="float: right;"> <script type="text/javascript" language="javascript">var ANS_customer_id="b88e90b2-8a42-4860-8c46-ee32d10f8f87";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script></div>	
+
+<p>
+<b>Authorize.net</b> (preferred)
+<br>
+<form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"><input type="hidden" name="LinkId" value ="c942dc85-fdf8-42e6-a86a-1001f994af4c" /><input type="image" src ="//content.authorize.net/images/donate-gold.gif" /></form>
+<br><br>
+</p>
+
+<P>
+<b>PayPal</b>
+<br>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UYE3G92TAWBYA" title="Donate to the ACVAA Foundation"><img src="/g/btn_donateCC_LG.gif" alt="Donate to the ACVAA Foundation" width="147" height="47" border="0"></a>
+</P>
+
+<P style="text-align: center;">
+<br><br>
+<script type='text/javascript' src='https://www.rapidscansecure.com/siteseal/siteseal.js?code=65,47C2D86FE467831D0F4862EEE1AA7EC87A3BB6F5'></script>
+</P>
 
 </div></div>''')
 
