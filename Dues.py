@@ -45,13 +45,15 @@ You can pay dues with your credit card using either authorize.net or PayPal.
         wr('''
 
 <P><b>Amount</b>: for 2016 = <b>$450</b></P>
-<P><b>Due</b>: April 1, 2016</P>
+<P><b>Due</b>: January 1&ndash;April 1, 2016 (see the bylaws below for more info)</P>
 <P><b>Methods of Payment</b>:
 <ol><li> Check made out to ACVAA and mailed to the ACVAA Executive Secretary.
-<li> Credit Card by communicating the Visa or MasterCard numbers and expiration date to the Executive Secretary.
-<li> PayPal by clicking on the "Pay Dues" button on this page. This will take you to a payment authorization site which will allow you to pay your dues either with a credit card (Visa, MasterCard, American Express or Discover) or through a PayPal Account.
+<li> Credit Card by communicating the Visa or MasterCard numbers and expiration date to the Executive Secretary. <b>Please do not email CC info; it is a security risk!</b>
+<li> Authorize.net by clicking on the "Pay Dues Now" button on this page to pay with a credit card.
+<li> PayPal by clicking on the "Make Payment" button on this page to pay with a credit card, or an existing PayPal account you may have.
+</ol>
 </P>
-<P><b>Executive Secretary</b>: Dr. Lydia Donaldson, P.O. Box 1100, Middleburg, VA 20118</P>
+<P><b>Executive Secretary</b>: Dr. Lynne Kushner, 2246 East Main Rd. Apt D, Portsmouth, RI 02871</P>
 <blockquote>
 <h2>ACVAA Bylaws, Article VI - Dues</h2>
 <P>
@@ -66,7 +68,7 @@ You can pay dues with your credit card using either authorize.net or PayPal.
 </blockquote>
 
 <P>
-Please also consider a donation to the <a href="http://acvaa.org/Foundation/">ACVAA Foundation</a>. Contributions of any amount are welcome and can be made by check, Visa or MasterCard as above or by PayPal through the "Donate" link on the ACVAA Foundation page of this website.
+Please also consider a donation to the <a href="http://acvaa.org/Foundation/">ACVAA Foundation</a>. Contributions of any amount are welcome and can be made by check, Visa or MasterCard as above or by Authorize.net and PayPal through the "Donate" buttons on the <a href="http://acvaa.org/Foundation/">ACVAA Foundation page</a> of this website.
 </P>
 
 <P class="hint">
