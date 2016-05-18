@@ -121,6 +121,17 @@ def is_rtc (req):
                 irtc = True
     return irtc
 
+def is_diplomate(req):
+    # pass in self.request()
+    c = req.cookies()
+    username = c.get('username')
+    ui = get_user_acct(username)
+    roles = ui.get('roles', [])
+    if 'diplomate' in roles:
+        return True
+    else:
+        return False
+
 ######################################################
 # Accessors
 
