@@ -12,27 +12,13 @@ class Dues (Template_Authenticated):
 <div class="t12b">Pay Dues Here</div>
 
 <p>
-You can pay dues with your credit card using either authorize.net or PayPal.
-</p>
-
-<!-- (c) 2005, 2016. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal" style="float: right;"> <script type="text/javascript" language="javascript">var ANS_customer_id="b88e90b2-8a42-4860-8c46-ee32d10f8f87";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script></div>	
-
-<p>
-<b>Authorize.net</b> (preferred)
-<br>
-<form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"><input type="hidden" name="LinkId" value ="3dd447cc-5f1b-4d05-8643-c1acfb842d85" /><input type="submit" value="Pay Dues Now" /></form>
-<br><br>
+You can pay dues with your credit card using PayPal.
 </p>
 
 <P>
 <b>PayPal</b>
 <br>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=37LAHDVSLLY78" title="Pay ACVAA Dues Now"><img src="/g/btn_payduesCC_LG.png" alt="Pay ACVAA Dues Now" width="171" height="47" border="0"></a>
-</P>
-
-<P style="text-align: center;">
-<br><br>
-<script type='text/javascript' src='https://www.rapidscansecure.com/siteseal/siteseal.js?code=65,47C2D86FE467831D0F4862EEE1AA7EC87A3BB6F5'></script>
 </P>
 
 </div></div>
