@@ -77,6 +77,24 @@ def del_document (doctype, category, filename):
     fullpath = os.path.join(dd, filename)
     os.unlink(fullpath)
 
+def archive_document (doctype, category, filename):
+    # This adds if not in list, removes if in list. Toggle status, basically.
+    dd = get_doc_dir(doctype, category)
+    archfile = os.path.join(dd, '.archivelist')
+    archivelist = rP(archfile)
+    if not archivelist:
+        archivelist = []
+    if filename not in archivelist:
+        archivelist.append(filename)
+    else:
+        del archivelist[archivelist.index(filename)]
+    wP(archivelist, archfile)
+
+def get_archive_list (doctype, category):
+    dd = get_doc_dir(doctype, category)
+    archfile = os.path.join(dd, '.archivelist')
+    return rP(archfile)
+
 ######################################################
 # General
 
