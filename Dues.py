@@ -1,4 +1,6 @@
 from acva.Template_Authenticated import Template_Authenticated
+from z_execsec import NAME, ADDRESS
+from z_times import get_year
 
 class Dues (Template_Authenticated):
     def title(self):
@@ -6,7 +8,7 @@ class Dues (Template_Authenticated):
 
     def writeContent(self):
         wr = self.writeln
-
+        nowyear = get_year()
         wr('''
 <div class="sb"><div class="st">
 <div class="t12b">Pay Dues Here</div>
@@ -30,16 +32,15 @@ You can pay dues with your credit card using PayPal.
         wr('<h1>%s</h1>' % (self.title()))
         wr('''
 
-<P><b>Amount</b>: for 2016 = <b>$450</b></P>
-<P><b>Due</b>: January 1&ndash;April 1, 2016 (see the bylaws below for more info)</P>
+<P><b>Amount</b>: for %s = <b>$450</b></P>
+<P><b>Due</b>: January 1&ndash;April 1, %s (see the bylaws below for more info)</P>
 <P><b>Methods of Payment</b>:
 <ol><li> Check made out to ACVAA and mailed to the ACVAA Executive Secretary.
 <li> Credit Card by communicating the Visa or MasterCard numbers and expiration date to the Executive Secretary. <b>Please do not email CC info; it is a security risk!</b>
-<li> Authorize.net by clicking on the "Pay Dues Now" button on this page to pay with a credit card.
 <li> PayPal by clicking on the "Make Payment" button on this page to pay with a credit card, or an existing PayPal account you may have.
 </ol>
 </P>
-<P><b>Executive Secretary</b>: Dr. Lynne Kushner, 2246 East Main Rd. Apt D, Portsmouth, RI 02871</P>
+<P><b>Executive Secretary</b>: %s: %s</P>
 <blockquote>
 <h2>ACVAA Bylaws, Article VI - Dues</h2>
 <P>
@@ -67,4 +68,4 @@ The ACVAA is a tax-exempt, 501(c)(3), charitable (509(a)(2) organization, EIN 58
 
 
 
-        ''')
+        ''' % (nowyear, nowyear, NAME, ADDRESS))

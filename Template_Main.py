@@ -283,24 +283,6 @@ class Template_Main (Page):
 
 
 ###############################################################################
-# Emails
-
-    def lydia (self):
-        return '''
-<script type="text/javascript">
-<!--
-document.write('<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;'+'&#108;&#100;&#111;&#110;&#108;&#100;&#115;&#110;@'+'&#101;&#97;&#114;&#116;&#104;&#108;&#105;&#110;&#107;&#46;&#110;&#101;&#116;'+'">'+'&#68;&#114;&#46;&#32;&#68;&#111;&#110;&#97;&#108;&#100;&#115;&#111;&#110;'+'</a>');
-//-->
-</script>'''
-
-    def steph (self):
-        return '''
-<script type="text/javascript"><!--
-document.write('<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;'+'&#115;&#109;&#104;&#97;&#109;&#105;@'+'&#118;&#116;&#46;&#101;&#100;&#117;'+'">'+'&#68;&#114;&#46;&#32;&#66;&#101;&#114;&#114;&#121;'+'</a>');
-//-->
-</script>'''
-
-###############################################################################
 # For unknown reasons, this widget stopped working. It would not load previous
 # settings into the date pulldowns. Although code-wise, they were SELECTED,
 # the javascript was undoing that & would only ever show today's date.

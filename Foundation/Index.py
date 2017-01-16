@@ -1,5 +1,6 @@
 from acva.Template_Main import Template_Main
 from acva.z_account import is_site_admin
+from acva.z_execsec import NAME, EMAIL
 from z_found import show_travel
 
 class Index (Template_Main):
@@ -86,6 +87,6 @@ The Foundation is a committee of the ACVAA, which is an Internal Revenue Code Se
 Funding
 </h2>
 <p>
-NOW accepting donations. As a committee of a 501(c)(3) organization, the Foundation is eligible for tax-deductible contributions. If you would like more information about the ACVAA Foundation, or would like to make a donation, please contact <a href="mailto:ldonldsn@earthlink.net">Lydia Donaldson</a> or <a href="mailto:wilsondv@cvm.msu.edu">Debbie Wilson</a>. Directed donations to specific areas (research/resident travel) will be accepted. Contributions will be acknowledged to the donor and recognized annually in the Foundation's annual report.
-</p>''')
+NOW accepting donations. As a committee of a 501(c)(3) organization, the Foundation is eligible for tax-deductible contributions. If you would like more information about the ACVAA Foundation, or would like to make a donation, please contact <a href="mailto:%s">%s</a> or <a href="mailto:wilsondv@cvm.msu.edu">Debbie Wilson</a>. Directed donations to specific areas (research/resident travel) will be accepted. Contributions will be acknowledged to the donor and recognized annually in the Foundation's annual report.
+</p>''' % (EMAIL, NAME))
 

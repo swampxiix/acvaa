@@ -5,6 +5,7 @@ from z_account import check_email_address, is_email_registered, \
 
 from z_constants import STATES, HARV_DIPL, HARV_RESD, COUNTRY_SELECT
 from z_forms import hidden, text, select, passwd, radio, radio_jq
+from z_execsec import EMAIL, NAME
 
 class Register (Template_Main):
 
@@ -14,10 +15,10 @@ class Register (Template_Main):
 <div class="menu_links">
   <h2>Need Help?</h2>
   <P>
-    If you have problems registering &amp; can\'t figure out where things are going awry, please <a href="mailto:execdir@acvaa.org">contact us</a>.
+    If you have problems registering &amp; can\'t figure out where things are going awry, please <a href="mailto:%s">contact us</a>.
   </P>
 </div>
-            ''')
+            ''' % (EMAIL))
 
     def title(self):
         return 'ACVAA Site Registration'
@@ -253,6 +254,5 @@ You can also change your privacy settings here.
                 easiest way to avoid mistakes.</em>
                 </P>
                 <P>
-                If you have further problems or questions, please contact
-                %s or %s.
-                </P>''' % (self.lydia(), self.steph()))
+                If you have further problems or questions, please contact the Executive Secretary, <a href="mailto:%s">%s</a>.
+                </P>''' % (EMAIL, NAME))
