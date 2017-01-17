@@ -1,14 +1,26 @@
 from Template_Authenticated import Template_Authenticated
 
 from z_account import get_user_acct
-from z_constants import DIPLSTR
+from z_constants import DIPLSTR, COUNTRY_SELECT
 from z_forms import text, select, hidden, passwd, submit, radio, radio_jq
 
 class Account (Template_Authenticated):
+
     def title(self):
         un = self.request().cookies().get('username')
         global un
         return '%s Account Information' % (un)
+
+    def addJavaScript(self):
+        wr = self.writeln
+        wr('<script type="text/javascript" src="/js/acvaa_geo.js"></script>')
+        wr('<script>')
+        p = get_user_acct(un)
+        global p
+        country = p.get('country', '')
+        wr('console.log("mycountry is %s");' % (country))
+        wr('</script>')
+
 
     def writeContent(self):
         wr = self.writeln
@@ -28,7 +40,7 @@ class Account (Template_Authenticated):
         if qs.get('fh'):
             self.render_special_msg('Consultancy setting saved.')
 
-        p = get_user_acct(un)
+#        p = get_user_acct(un)
 
         wr('''
 

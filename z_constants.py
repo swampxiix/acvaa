@@ -101,7 +101,7 @@ FMONTHS = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'Ju
 
 ######################################################
 
-from z_countries import DEFAULT, CONTINENT_ORDER, COUNTRIES
+from z_geo import DEFAULT, CONTINENT_ORDER, COUNTRIES
 
 def construct_pulldown():
     lines = []

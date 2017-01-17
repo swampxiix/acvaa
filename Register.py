@@ -9,6 +9,9 @@ from z_execsec import EMAIL, NAME
 
 class Register (Template_Main):
 
+    def addJavaScript(self):
+        self.writeln('<script type="text/javascript" src="/js/acvaa_geo.js"></script>')
+
     def writeNav(self):
         wr = self.writeln
         wr('''
