@@ -28,19 +28,22 @@ def get_locations ():
         if ddict.get('sec_policy') == 'paranoid':
             pass
         else:
-            country = ddict.get('country', 'Undefined')
-            if not MASTER.has_key(country):
-                MASTER[country] = {}
-            CDICT = MASTER[country]
+            country = ddict.get('country')
+            if country:
+                if not MASTER.has_key(country):
+                    MASTER[country] = {}
+                CDICT = MASTER[country]
     
-            state = ddict.get('state', 'Undefined')
-            if not CDICT.has_key(state):
-                CDICT[state] = {}
-            SDICT = CDICT[state]
+            state = ddict.get('state')
+            if state:
+                if not CDICT.has_key(state):
+                    CDICT[state] = {}
+                SDICT = CDICT[state]
     
-            city = ddict.get('city', 'Undefined')
-            if not SDICT.has_key(city):
-                SDICT[city] = []
+            city = ddict.get('city')
+            if city:
+                if not SDICT.has_key(city):
+                    SDICT[city] = []
     
             did = ddict.get('username')
             dname = '%s %s %s' % (ddict.get('fn', ''), ddict.get('mi', ''), ddict.get('sn', ''))
@@ -48,5 +51,6 @@ def get_locations ():
                 dname += ', %s' % (ddict['title'])
     
             tupe = (did, dname)
-            SDICT[city].append(tupe)
+            if city:
+                SDICT[city].append(tupe)
     return MASTER
