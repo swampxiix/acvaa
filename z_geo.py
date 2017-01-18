@@ -38,6 +38,7 @@ COUNTRIES = {
         'Monaco',
         'Montenegro',
         'Netherlands',
+        'Northern Ireland',
         'Norway',
         'Poland',
         'Portugal',
