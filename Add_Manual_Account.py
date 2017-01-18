@@ -1,11 +1,15 @@
 from Template_Admin import Template_Admin
 from z_account import save_manual_account
-from z_constants import ALL_ROLES
+from z_constants import ALL_ROLES, COUNTRY_SELECT
 from z_forms import text, select, hidden, passwd, submit, radio, radio_jq
 
 class Add_Manual_Account (Template_Admin):
     def title(self):
         return 'Add Manual Account'
+
+    def addJavaScript(self):
+        wr = self.writeln
+        wr('<script type="text/javascript" src="/js/acvaa_geo.js"></script>')
 
     def writeContent(self):
         un = self.request().cookies().get('username')
@@ -48,9 +52,12 @@ class Add_Manual_Account (Template_Admin):
 
 <div class="form-group">
 <label for="country">Country</label>
-<input type="text" class="form-control" id="country" name="country" placeholder="">
+%s
 </div>
 <br>
+            ''' % ( COUNTRY_SELECT ))
+            wr('''
+
 
 <div class="form-group">
 <label for="addr1">Addr 1</label>
@@ -70,7 +77,7 @@ class Add_Manual_Account (Template_Admin):
 
 <div class="form-group">
 <label for="state">State/Prov.</label>
-<input type="text" class="form-control" id="state" name="state" placeholder="">
+<span id="state_slot"></span>
 </div>
 
 <div class="form-group">

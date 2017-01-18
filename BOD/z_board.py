@@ -1,5 +1,6 @@
-from acva.z_constants import BASEDIR, STATES, PROVS, rP, wP
+from acva.z_constants import BASEDIR, rP, wP
 from acva.z_times import get_int_from_YMD
+from acva.z_geo import USA_STATES_ORDER, USA_STATES, CAN_STATES_ORDER, CAN_STATES
 import os, glob
 
 BODDIR = os.path.join(BASEDIR, 'BOD')
@@ -105,10 +106,13 @@ def get_region_by_state (state):
             return r
 
 def get_region_dict (country='US'):
-    SLIST = STATES
+    SLIST = []
     if country == 'CA':
-        SLIST = PROVS
-    SLIST.sort()
+        for s in CAN_STATES_ORDER:
+            SLIST.append(CAN_STATES.get(s))
+    else:
+        for s in USA_STATES_ORDER:
+            SLIST.append(USA_STATES.get(s))
     FINAL = {}
     for s in SLIST:
         FINAL[s] = get_region_by_state(s)

@@ -1,5 +1,5 @@
 from acva.Template_Authenticated import Template_Authenticated
-from acva.z_constants import STATES, STATES_LOOKUP, PROVS, PROVS_LOOKUP
+from acva.z_geo import USA_STATES_ORDER, USA_STATES, CAN_STATES_ORDER, CAN_STATES
 from z_board import get_region_dict, reg_hex, getBOD
 
 class Regions (Template_Authenticated):
@@ -55,17 +55,17 @@ class Regions (Template_Authenticated):
         count = 0
         wr('<table><tr valign="top">')
 
-        for s in STATES:
+        for s in USA_STATES_ORDER:
             if count == 0 or count == 25:
                 wr('<td>')
                 wr('<table class="reg">')
                 wr('<tr><td><td>State<td>Reg')
             count += 1
-            region = RDICT.get(s)
+            region = RDICT.get(USA_STATES.get(s))
             wr('<tr style="border: 1px solid #666; background-color: #%s;">' % (reg_hex.get(region)))
-            wr('<td class="reg">%s ' % (s))
+            wr('<td class="reg">%s ' % (USA_STATES.get(s)))
             wr('<td class="reg">')
-            wr(STATES_LOOKUP.get(s))
+            wr(s)
             wr('<td class="reg">')
             wr(region)
 
@@ -83,12 +83,12 @@ class Regions (Template_Authenticated):
         wr('<table class="reg">')
         wr('<tr><td><td>Province<td>Reg')
 
-        for s in PROVS:
-            region = RDICT.get(s)
+        for s in CAN_STATES_ORDER:
+            region = RDICT.get(CAN_STATES.get(s))
             wr('<tr style="background-color: #%s;">' % (reg_hex.get(region)))
-            wr('<td class="reg">%s ' % (s))
+            wr('<td class="reg">%s ' % (CAN_STATES.get(s)))
             wr('<td class="reg">')
-            wr(PROVS_LOOKUP.get(s))
+            wr(s)
             wr('<td class="reg">')
             wr(region)
 

@@ -14,13 +14,6 @@ class Account (Template_Authenticated):
     def addJavaScript(self):
         wr = self.writeln
         wr('<script type="text/javascript" src="/js/acvaa_geo.js"></script>')
-        wr('<script>')
-        p = get_user_acct(un)
-        global p
-        country = p.get('country', '')
-        wr('console.log("mycountry is %s");' % (country))
-        wr('</script>')
-
 
     def writeContent(self):
         wr = self.writeln
@@ -40,7 +33,7 @@ class Account (Template_Authenticated):
         if qs.get('fh'):
             self.render_special_msg('Consultancy setting saved.')
 
-#        p = get_user_acct(un)
+        p = get_user_acct(un)
 
         wr('''
 
@@ -104,10 +97,10 @@ class Account (Template_Authenticated):
         wr('''
 <div class="form-group">
 <label for="country">Country</label>
-<input type="text" class="form-control" id="country" name="country" value="%s">
+%s
 </div>
 <br>
-            ''' % ( p.get('country', '') ))
+            ''' % ( COUNTRY_SELECT ))
         wr('''
 <div class="form-group">
 <label for="addr1">Addr 1</label>
@@ -130,9 +123,9 @@ class Account (Template_Authenticated):
         wr('''
 <div class="form-group">
 <label for="state">State/Prov.</label>
-<input type="text" class="form-control" id="state" name="state" value="%s">
+<span id="state_slot"></span>
 </div>
-            ''' % ( p.get('state', '') ))
+            ''')
         wr('''
 <div class="form-group">
 <label for="zip">ZIP/Postal Code</label>
