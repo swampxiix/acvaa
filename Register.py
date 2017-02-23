@@ -3,7 +3,7 @@ from Template_Main import Template_Main
 from z_account import check_email_address, is_email_registered, \
     save_registration, get_user_acct, hash_string, get_user_role
 
-from z_constants import STATES, HARV_DIPL, HARV_RESD, COUNTRY_SELECT
+from z_constants import HARV_DIPL, HARV_RESD, COUNTRY_SELECT
 from z_forms import hidden, text, select, passwd, radio, radio_jq
 from z_execsec import EMAIL, NAME
 
