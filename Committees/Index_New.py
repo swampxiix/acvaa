@@ -1,8 +1,9 @@
-from acva.Template_Authenticated import Template_Authenticated
+from Comm_Tmpl import Comm_Tmpl
 from acva.z_account import is_site_admin
-from z_comm import get_committee_order
+from z_comm import get_committee_order, get_committee_info, \
+    get_members_order, get_members
 
-class Index_New (Template_Authenticated):
+class Index_New (Comm_Tmpl):
     def title(self):
         return 'ACVAA Committees'
 
@@ -16,15 +17,40 @@ class Index_New (Template_Authenticated):
 
         if IS_SITE_ADMIN:
             wr('<div class="button">')
-            wr('<a href="Add_Committee">Add Committee</a>')
+            wr('<a href="Committee_Form">Add Committee</a>')
             wr('</div>')
 
         wr('<a name="top"></a>')
         wr('<h1>%s</h1>' % (self.title()))
+
+        wr('<table class="comm">')
         comm_order = get_committee_order()
         for comm_id in comm_order:
             comm_info = get_committee_info(comm_id)
-            wr('<h2>%s' % (comm_id.get('name')))
+            wr('<tr><th colspan="4">%s' % (comm_info.get('name')))
+
             if IS_SITE_ADMIN:
-                wr('<a href="Edit_Form?id=%s"><i class="fa fa-pencil" style="color: #0000FF;"></i></a>' % (comm_id))
-            wr('</h2>')
+                wr('&nbsp;&nbsp;<a href="Edit_Form?comm_id=%s"><i class="fa fa-pencil" style="color: #647382;"></i></a>&nbsp;&nbsp;' % (comm_id))
+                wr('<a href="Reorder?comm_id=%s&dir=up"><i class="fa fa-arrow-up" style="color: #647382;"></i></a>&nbsp;&nbsp;' % (comm_id))
+                wr('<a href="Reorder?comm_id=%s&dir=down"><i class="fa fa-arrow-down" style="color: #647382;"></i></a>' % (comm_id))
+
+            mbo = get_members_order(comm_id)
+            mbds = get_members(comm_id)
+
+            for mb_id in mbo:
+                mb_dict = mbds.get(mb_id)
+                wr('<tr>')
+                for k in ['name', 'title', 'email', 'year']:
+                    wr('<td>')
+                    if k == 'email':
+                        wr('<a href="mailto:%s">%s</a>' % (mb_dict.get(k), mb_dict.get(k)))
+                    else:
+                        wr(mb_dict.get(k))
+
+
+
+        wr('</table>')
+
+
+
+

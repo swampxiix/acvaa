@@ -54,11 +54,11 @@ def add_committee (comm_name):
     os.mkdir(newpath)
     comm_map = get_committees()
     comm_map[this_id] = {'name': comm_name}
-    writePick(comm_map, COMM_MAP)
+    wP(comm_map, COMM_MAP)
     comm_ord = get_committee_order() # []
     if this_id not in comm_ord:
         comm_ord.append(this_id)
-        writePick(comm_ord, COMM_ORD)
+        wP(comm_ord, COMM_ORD)
     return this_id
 
 def get_committee_info (comm_id):
@@ -68,7 +68,7 @@ def get_committee_info (comm_id):
 def rename_committee (comm_id, new_name):
     comms = get_committees()
     comms[comm_id]['name'] = new_name
-    writePick(comms, COMM_MAP)
+    wP(comms, COMM_MAP)
 
 def delete_committee (comm_id):
     """
@@ -78,33 +78,24 @@ def delete_committee (comm_id):
     comms = get_committees()
     if comm_id in comms.keys():
         del comms[comm_id]
-        writePick(comms, COMM_MAP)
+        wP(comms, COMM_MAP)
     order = get_committee_order()
     if comm_id in order:
         del order[order.index(comm_id)]
-        writePick(order, COMM_ORD)
+        wP(order, COMM_ORD)
 
 def reorder_committees (new_order): # Blue Monday
-    writePick(new_order, COMM_ORD)
+    wP(new_order, COMM_ORD)
 
 ######################################################
 # Members
 
-def get_all_member_files (comm_id):
-    comm_directory = os.path.join(DATADIR, comm_id)
-    mb_paths = []
-    allpaths = glob.glob(os.path.join(comm_directory, '*'))
-    for fpath in allpaths:
-        try:
-            x = int(os.path.basename(fpath))
-            mb_paths.append(fpath)
-        except ValueError:
-            pass
-    return mb_paths
-
 def get_next_member_id (comm_id):
-    allpaths = get_all_software_files(comm_id)
-    return get_next_id(allpaths)
+    members = get_members (comm_id)
+    L = []
+    for k in members.keys():
+        L.append(k)
+    return get_next_id(L)
 
 def get_members (comm_id):
     MB_MAP = os.path.join(DATADIR, comm_id, 'members.map')
@@ -122,26 +113,26 @@ def add_member (comm_id, mb_title, mb_name, mb_email, mb_year):
     this_id = get_next_member_id(comm_id)
     members_map = get_members(comm_id)
     members_map[this_id] = {'title': mb_title, 'name': mb_name, 'email': mb_email, 'year': mb_year}
-    writePick( members_map, os.path.join(DATADIR, comm_id, 'members.map') )
+    wP( members_map, os.path.join(DATADIR, comm_id, 'members.map') )
     members_ord = get_members_order(comm_id) # []
     if this_id not in members_ord:
         members_ord.append(this_id)
-        writePick( members_ord, os.path.join(DATADIR, comm_id, 'members.order') )
+        wP( members_ord, os.path.join(DATADIR, comm_id, 'members.order') )
     return this_id
 
 def delete_member (comm_id, mb_id):
     mb_map = get_members(comm_id)
     if mb_id in mb_map.keys():
         del mb_map[mb_id]
-        writePick(mb_map, os.path.join(DATADIR, comm_id, 'members.map'))
+        wP(mb_map, os.path.join(DATADIR, comm_id, 'members.map'))
     order = get_members_order(comm_id)
     if mb_id in order:
         del order[order.index(mb_id)]
-        writePick(order, os.path.join(DATADIR, comm_id, 'members.order'))
+        wP(order, os.path.join(DATADIR, comm_id, 'members.order'))
 
 def reorder_members (comm_id, new_order): # Bizarre Love Triangle
     MB_ORD = os.path.join(DATADIR, comm_id, 'members.order')
-    writePick(new_order, MB_ORD)
+    wP(new_order, MB_ORD)
 
 
 
