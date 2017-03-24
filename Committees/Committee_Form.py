@@ -27,7 +27,7 @@ class Committee_Form (Comm_Tmpl):
                     newname = form.get('comm_name')
                     if newname:
                         this_id = add_committee(newname)
-                        redirURL = 'Index'
+                        redirURL = 'Edit_Form?comm_id=%s' % (this_id)
                     else:
                         redirURL = 'Add_Committee'
                     self.response().sendRedirect(redirURL)

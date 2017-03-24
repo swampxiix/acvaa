@@ -14,7 +14,7 @@ class Edit_Form (Comm_Tmpl):
         wr('<h1>%s</h1>' % (self.title()))
         if IS_SITE_ADMIN:
             wr('<div class="button">')
-            wr('<a href="Index_New">Committees Page</a>')
+            wr('<a href="Index">Committees Page</a>')
             wr('</div>')
 
             if self.request()._environ.get('REQUEST_METHOD') == 'POST':
