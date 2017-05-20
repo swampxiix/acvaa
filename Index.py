@@ -37,7 +37,7 @@ The ACVAA promotes anesthesia and analgesia continuing education and training pr
         clickusername = self.request().cookies().get('username')
         accesslist = get_journal_access()
         if clickusername in accesslist:
-            wr('<a href="http://www.vaajournal.org/" title="Journal"><img src="/g/journal.jpg" width="200" height="169" alt="Journal" border="0" /></a>')
+            wr('<a href="Journal" title="Journal"><img src="/g/journal.jpg" width="200" height="169" alt="Journal" border="0" /></a>')
         else:
             wr('<a href="Foundation" title="The ACVAA Foundation"><img src="/g/foundation.jpg" width="200" height="169" alt="The ACVAA Foundation" border="0" /></a>')
         wr('</span>')

@@ -23,11 +23,11 @@ class Testing (Template_Authenticated):
 </div>
 
 <p>
-Welcome! Access to <a href="http://www.vaajournal.org/?%s">Veterinary Anaesthesia and Analgesia</a> is a benefit for Diplomates of the ACVAA.
+Welcome! Access to <a href="http://www.vaajournal.org/?%s">Veterinary Anaesthesia and Analgesia</a> is a benefit for Diplomates of the ACVAA. You do not have to create an account on the Elsevier site to enjoy access. Click the image of the journal.
 </p>
 
 <p>
-To personalize your experience on the journal site (save searches, view recent searches, and receive email alerts), you will need to log into your account or <a href="http://www.vaajournal.org/action/registration"> register with the Elsevier website*</a> if you have not previously done so.
+To personalize your experience on the journal site (save searches, view recent searches, and receive email alerts), you will need to log into your existing Elsevier account or <a href="http://www.vaajournal.org/action/registration">create a new account on the Elsevier website*</a>. This is not required for journal access.
 </p>
 
 <p>
