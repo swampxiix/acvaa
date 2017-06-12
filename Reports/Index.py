@@ -27,11 +27,12 @@ class Index (Template_Authenticated):
             year = str(y)
             years[year] = {}
             for k in ddr.keys():
-                if year in k:
+                if (year in k) or (year in ddr[k]):
                     years[year][k] = ddr[k]
         yks = years.keys()
         yks = sorted(yks, key=lambda x: (x.isdigit() and float(x)) or x.lower())
         yks.reverse()
+
         wr('<div class="sb"><div class="st">')
         wr('<div class="t12b">Report Archives</div>')
         for yr in yks:
@@ -63,7 +64,7 @@ class Index (Template_Authenticated):
     
             for k in ks:
                 v = ddr.get(k)
-                wr('<p><h3><a href="/docs/%s/%s">%s</a></h3>Filename: %s' % (subdir, v, k, v))
+                wr('<p><h3><a href="/docs/%s/%s">%s</a></h3>Filename: %s' % (subdir, v, (k or v), v))
                 uri = '/File_Deleter?doctype=%s&category=%s&filename=%s' % (document_type, category, v)
                 if ISA:
                     wr('<a href="%s"><img src="/g/delete.png" alt="delete" width="17" height="17" border="0" /></a>' % (uri))

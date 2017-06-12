@@ -9,7 +9,7 @@ class Welcome (Template_Authenticated):
         wr('''
 
 <h1>
-General Information for American College of Veterinary Anesthesia and Analgesia Candidates
+General Information for American College of Veterinary Anesthesia and Analgesia Residents
 </h1>
 
 <P>
@@ -27,7 +27,7 @@ The first step toward having the ACVAA be a resource for you during your residen
 <P>
 Here you will find the:
 <ol class="dec">
-<li> <a href="/docs/diplomates/ACVAA_Residency_Training_Standards_2014_final.doc">Residency Training Standards</a> &ndash; to give you perspective on the ACVAA's expectations of your training program
+<li> <a href="/docs/candidates/ACVAA_RTS_on_website2016_FINAL.docx">Residency Training Standards</a> &ndash; to give you perspective on the ACVAA's expectations of your training program
 <li> <a href="/docs/candidates/ACVAA_Case_Activities_Log_template_2013.xls">Caselog & Activities Log Template</a> &ndash; to be maintained during your residency and submitted to the ACVAA Executive Secretary annually and on application to sit the certifying examination
 <li> <a href="/docs/ACVA_Residency_Timeline_2010.xls">ACVAA Residency and Certification Timeline</a> &ndash; to be a guide throughout your residency and preparation for certification
 <li> <a href="/docs/candidates/List_of_Recommended_Journals_for_Resident_Publication_Oct_2014.docx">A list of journals</a> considered suitable for your manuscript submission. This is not all inclusive. If you have any questions please contact the Executive Secretary.
@@ -46,7 +46,7 @@ Keep in mind that, according to the ACVAA Bylaws and Residency Training Standard
 <ol class="dec">
 <li> be a graduate of a college or school of veterinary medicine and legally qualified to practice veterinary medicine in some country.
 <li> have completed a year of general veterinary practice or a rotating internship (* 30% anesthesia)
-<li> have satisfactorily participated in specialty training in a residency program that meets the requirements set by the ACVAA's <a href="/docs/diplomates/ACVAA_Residency_Training_Standards_2014_final.doc">Residency Training Standards</a>
+<li> have satisfactorily participated in specialty training in a residency program that meets the requirements set by the ACVAA's <a href="/docs/candidates/ACVAA_RTS_on_website2016_FINAL.docx">Residency Training Standards</a>
 <li> be licensed to practice veterinary medicine in the US or Canada (exceptions are made for applicants coved by a veterinary school license)
 <li> have a first-author manuscript describing original research in clinical or experimental anesthesia or pain management accepted by a peer-reviewed journal*
 </ol>
