@@ -124,6 +124,7 @@ class Template_Main (Page):
       <div class="col-md-9" id="account-header">
             ''')
         if IS_LOGGED_IN:
+#            wr('<span style="color: #FFFFFF;">%s</span> ' % (self.request().cookies().get('role', '')))
             if acting_as(self.request()):
                 wr('<span style="background-color: #F00; color: #FFF; font-weight: bold; padding: 2px 5px;">YOU ARE ACTING AS:</span> ')
             un = self.request().cookies().get('username')
