@@ -32,8 +32,8 @@ You can pay dues with your credit card using PayPal.
         wr('<h1>%s</h1>' % (self.title()))
         wr('''
 
-<P><b>Amount</b>: for %s = <b>$450</b></P>
-<P><b>Due</b>: January 1&ndash;April 1, %s (see the bylaws below for more info)</P>
+<P><b>Amount</b>: <b>$450</b></P>
+<P><b>Due</b>: January 1&ndash;April 1 (see the bylaws below for more info)</P>
 <P><b>Methods of Payment</b>:
 <ol><li> Check made out to ACVAA and mailed to the ACVAA Executive Secretary.
 <li> Credit Card by communicating the Visa or MasterCard numbers and expiration date to the Executive Secretary. <b>Please do not email CC info; it is a security risk!</b>
@@ -68,4 +68,4 @@ The ACVAA is a tax-exempt, 501(c)(3), charitable (509(a)(2) organization, EIN 58
 
 
 
-        ''' % (nowyear, nowyear, NAME, ADDRESS))
+        ''' % (NAME, ADDRESS))

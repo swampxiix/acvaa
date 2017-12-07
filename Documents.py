@@ -25,8 +25,14 @@ class Documents (Template_Authenticated):
             IS_DIP = rolestr == DIPLSTR
             document_type = 'document'
 
+            # THIS IS A HACK - SHOULD BE CLEANED UP
+            if category == 'candidates':
+                category = 'residents'
             page_title = '%s for %s' % (self.title(), category.capitalize())
             wr('<h1>%s</h1>' % (page_title))
+            # RESET THE STUPID HACK
+            if category == 'residents':
+                category = 'candidates'
 
             if not show_archives:
                 wr('''
