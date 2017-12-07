@@ -28,7 +28,7 @@ The first step toward having the ACVAA be a resource for you during your residen
 Here you will find the:
 <ol class="dec">
 <li> <a href="/docs/candidates/ACVAA_2017_Residency_Training_Standards.docx">Residency Training Standards</a> &ndash; to give you perspective on the ACVAA's expectations of your training program
-<li> <a href="/docs/candidates/ACVAA_Case_Activities_Log_template_2013.xls">Caselog & Activities Log Template</a> &ndash; to be maintained during your residency and submitted to the ACVAA Executive Secretary annually and on application to sit the certifying examination
+<li> <a href="/docs/candidates/ACVAA_Case_Activities_Log_template_2017_12.xls">Caselog & Activities Log Template</a> &ndash; to be maintained during your residency and submitted to the ACVAA Executive Secretary annually and on application to sit the certifying examination
 <li> <a href="/docs/ACVA_Residency_Timeline_2010.xls">ACVAA Residency and Certification Timeline</a> &ndash; to be a guide throughout your residency and preparation for certification
 <li> <a href="/docs/candidates/List_of_Recommended_Journals_for_Resident_Publication_Oct_2014.docx">A list of journals</a> considered suitable for your manuscript submission. This is not all inclusive. If you have any questions please contact the Executive Secretary.
 </ol>
