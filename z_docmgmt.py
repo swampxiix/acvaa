@@ -7,12 +7,12 @@ import os
 from z_constants import BASEDIR, rP, wP
 from z_docs import sanitize_file_name
 
-DOCS_DIR = os.path.join(BASEDIR, 'Documents')
+DOCS_DIR = os.path.join(BASEDIR, 'DocRepo') # was "Documents" but that caused namespace collision
 TITLES_FILE = os.path.join(DOCS_DIR, '.titles.pick')
 CATEGORIES_FILE = os.path.join(DOCS_DIR, '.categories.pick')
 ACCESS_FILE = os.path.join(DOCS_DIR, '.access.pick')
 ARCHIVED_FILE = os.path.join(DOCS_DIR, '.archived.pick')
-MASTER_CATEGORY_LIST = os.path.join(DOCS_DIR, 'categories.master')
+MASTER_CATEGORY_LIST = os.path.join(DOCS_DIR, '.categories.master')
 
 MASTER_ROLES_LIST = ['Diplomates', 'Residents', 'Veterinarians', 'Pet Owners']
 
@@ -31,7 +31,7 @@ def get_all_possible_categories ():
     return rP(MASTER_CATEGORY_LIST)
 
 def edit_master_category (newcatname, oldcatname=None):
-    get_all_possible_categories()
+    p = get_all_possible_categories() or []
     if oldcatname:
         p = rm_fr_list(p, oldcatname)
     if newcatname not in p:
@@ -40,7 +40,7 @@ def edit_master_category (newcatname, oldcatname=None):
 
 def remove_master_category (catname):
     # Make sure you can't remove category that's not empty yet!
-    get_all_possible_categories()
+    p = get_all_possible_categories()
     if is_category_empty(catname):
         p = rm_fr_list(p, catname)
         wP(p, MASTER_CATEGORY_LIST)
@@ -67,13 +67,23 @@ def save_doc_file (form):
     contents, filename = fobj.value, fobj.filename
     filename = sanitize_file_name(filename)
     open(os.path.join(DOCS_DIR, filename), 'wb').write(contents)
-    save_info(filename, form.get('title'))
-    for cat in form.get('category'):
-        if cat:
-            save_category(filename, cat)
-    for role in form.get('access'):
-        if role:
-            save_access(filename, role)
+    save_doc_title(filename, form.get('title'))
+
+    fcat = form.get('category')
+    if type(fcat) is list:
+        for cat in fcat:
+            if cat:
+                save_doc_to_category(filename, cat)
+    if type(fcat) is str:
+        save_doc_to_category(filename, fcat)
+
+    frol = form.get('role')
+    if type(frol) is list:
+        for role in frol:
+            if role:
+                save_doc_access(filename, role)
+    if type(frol) is str:
+        save_doc_access(filename, frol)
 
 def rm_doc_file (filename):
     fullpath = os.path.join(DOCS_DIR, filename)
@@ -109,6 +119,7 @@ def save_doc_to_category (filename, category):
     file_list = p.get(category, [])
     if filename not in file_list:
         file_list.append(filename)
+        p[category] = file_list
         wP(p, CATEGORIES_FILE)
 
 def remove_doc_from_category (filename, category):
@@ -138,6 +149,7 @@ def save_doc_access (filename, role):
     file_list = p.get(role, [])
     if filename not in file_list:
         file_list.append(filename)
+        p[role] = file_list
         wP(p, ACCESS_FILE)
 
 def remove_doc_access (filename, role):
@@ -156,6 +168,20 @@ def edit_doc_access (filename, list_of_roles_to_allow):
     access_dict = get_access()
     for rolename in list_of_roles_to_allow:
         save_doc_access(filename, rolename)
+
+#------------------------------------------------------
+# Archive switches
+
+def archive_doc (filename):
+    filename_list = get_archived()
+    if filename not in filename_list:
+        filename_list.append(filename)
+    wP(filename_list, ARCHIVED_FILE)
+
+def activate_doc (filename):
+    filename_list = get_archived()
+    new_list = rm_fr_list (filename_list, filename)
+    wP(new_list, ARCHIVED_FILE)
 
 ######################################################
 # Access
