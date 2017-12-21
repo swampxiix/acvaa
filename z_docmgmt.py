@@ -24,6 +24,12 @@ def rm_fr_list (alist, anitem):
         del alist[alist.index(anitem)]
     return alist
 
+def listify_a_thing (thing):
+    if type(thing) is list:
+        return thing
+    if type(thing) is str:
+        return [thing]
+
 ######################################################
 # Managing the master list of all potential doc categories.
 
@@ -62,6 +68,18 @@ def reorder_master_category_list (catname, direction):
 #------------------------------------------------------
 # File
 
+def handle_cats (filename, fcat):
+    fcat2 = listify_a_thing(fcat)
+    for cat in fcat2:
+        if cat:
+            save_doc_to_category(filename, cat)
+
+def handle_roles (filename, frol):
+    frol2 = listify_a_thing(frol)
+    for role in frol2:
+        if role:
+            save_doc_access(filename, role)
+
 def save_doc_file (form):
     fobj = form.get('datafile') # existence of file already checked
     contents, filename = fobj.value, fobj.filename
@@ -70,20 +88,37 @@ def save_doc_file (form):
     save_doc_title(filename, form.get('title'))
 
     fcat = form.get('category')
-    if type(fcat) is list:
-        for cat in fcat:
-            if cat:
-                save_doc_to_category(filename, cat)
-    if type(fcat) is str:
-        save_doc_to_category(filename, fcat)
+    handle_cats(filename, fcat)
 
     frol = form.get('role')
-    if type(frol) is list:
-        for role in frol:
-            if role:
-                save_doc_access(filename, role)
-    if type(frol) is str:
-        save_doc_access(filename, frol)
+    handle_roles(filename, frol)
+
+def edit_doc_file (form):
+    filename = form.get('filename')
+    save_doc_title(filename, form.get('title'))
+
+    fcat = form.get('category')
+    handle_cats(filename, fcat)
+    # Patrol for removals
+    apcs = get_all_possible_categories() # list
+    existing_cats = get_categories() # dict {key: [list]}
+    for C in apcs:
+        filelist = existing_cats.get(C, []) # list
+        if filename in filelist:
+            fcat2 = listify_a_thing(fcat)
+            if C not in fcat:
+                remove_doc_from_category(filename, C)
+
+    frol = form.get('role')
+    handle_roles(filename, frol)
+    # Patrol for removals
+    existing_rols = get_access()
+    for R in MASTER_ROLES_LIST:
+        filelist = existing_rols.get(R, [])
+        if filename in filelist:
+            frol2 = listify_a_thing(frol)
+            if R not in frol:
+                remove_doc_access (filename, R)
 
 def rm_doc_file (filename):
     fullpath = os.path.join(DOCS_DIR, filename)
@@ -91,6 +126,7 @@ def rm_doc_file (filename):
     remove_doc_title(filename)
     edit_doc_categories(filename, [])
     edit_doc_access(filename, [])
+    activate_doc(filename)
     # Delete.
     os.unlink(fullpath)
 
@@ -197,6 +233,25 @@ def get_access ():
 
 def get_titles ():
     return rP(TITLES_FILE)
+
+def get_document_properties (filename):
+    filename_title_dict = get_titles()
+    title = filename_title_dict.get(filename)   
+    cat_filelist_dict = get_categories()
+    my_cats = []
+    for C in cat_filelist_dict.keys():
+        filelist = cat_filelist_dict.get(C, [])
+        if filename in filelist:
+            my_cats.append(C)
+    role_filelist_dict = get_access()
+    my_rols = []
+    for R in MASTER_ROLES_LIST:
+        filelist = role_filelist_dict.get(R, [])
+        if filename in filelist:
+            my_rols.append(R)
+    arch = get_archived()
+    final = {'title': title, 'categories': my_cats, 'roles': my_rols, 'is_archived': filename in arch}
+    return final
 
 ######################################################
 # Boolean checks
