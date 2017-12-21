@@ -1,6 +1,6 @@
 from Template_Authenticated import Template_Authenticated
 from z_account import is_site_admin
-from z_docmgmt import get_titles, get_document_properties
+from z_docmgmt import get_document_properties, get_title_filename_dict
 
 class DM_Index (Template_Authenticated):
 
@@ -16,12 +16,7 @@ class DM_Index (Template_Authenticated):
             wr('<a href="DM_Edit_Categories" class="btn btn-default btn-sm"><i class="fa fa-pencil">&nbsp;</i>Edit Categories</a></p>')
             wr('<h2>All Existing Documents</h2>')
 
-            filename_title_dict = get_titles()
-
-            title_filename_dict = {}
-            for filename in filename_title_dict.keys():
-                title = filename_title_dict.get(filename)
-                title_filename_dict[title] = filename
+            title_filename_dict = get_title_filename_dict()
             tfdk = title_filename_dict.keys()
             tfdk.sort()
             wr('<table><tr><th>Title<th>Filename<th>Categories<th>Access<th>Archived')

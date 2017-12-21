@@ -264,6 +264,81 @@ def is_category_empty (catname):
     else:
         return True
 
+######################################################
+# Functions for DM_View
+
+ROLEMAP = {
+            'diplomate': 'Diplomates',
+            'resident': 'Residents',
+            }
+
+RESTRICTED_ROLES = ROLEMAP.values()
+
+def get_title_filename_dict ():
+    filename_title_dict = get_titles()
+    title_filename_dict = {}
+    for filename in filename_title_dict.keys():
+        title = filename_title_dict.get(filename)
+        title_filename_dict[title] = filename
+    return title_filename_dict
+
+def get_docs_by_access (roles, is_archived=False):
+    """
+    roles can be a single string or list of strings.
+    """
+    roles = listify_a_thing(roles)
+    role_filelist_dict = get_access()
+    archived_list = get_archived()
+    MULTIROLES_FILELIST = []
+    for role in roles:
+        filelist = role_filelist_dict.get(role, [])
+        MULTIROLES_FILELIST += filelist
+    title_filename_dict = get_title_filename_dict()
+    tfdk = title_filename_dict.keys()
+    tfdk.sort()
+    ROLEFILES = []
+    for title in tfdk: # sorted by title
+        filename = title_filename_dict.get(title)
+        if filename in MULTIROLES_FILELIST:
+            if is_archived:
+                if filename in archived_list:
+                    filetupe = (title, filename)
+                    ROLEFILES.append(filetupe)
+            else:
+                if filename not in archived_list:
+                    filetupe = (title, filename)
+                    ROLEFILES.append(filetupe)
+    return ROLEFILES
+
+def modify_user_roles (userroles):
+    new = []
+    for role in userroles:
+        r2 = ROLEMAP.get(role)
+        if r2:
+            if r2 not in new:
+                new.append(r2)
+    return new
+
+def do_archived_docs_exist (role):
+    EXIST = False
+    if get_docs_by_access(role, True):
+        EXIST = True
+    return EXIST
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
