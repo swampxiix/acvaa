@@ -45,6 +45,9 @@ class DM_Edit_Categories (Template_Authenticated):
                 # Display
                 else:
                     wr('<h1>%s</h1>' % (self.title()))
+
+                    wr('<p><a href="DM_Index" class="btn btn-default btn-sm"><i class="fa fa-arrow-left">&nbsp;</i>Document Management</a>')
+
                     categories = get_all_possible_categories()
                     wr('<p>Note: You can only delete a category if it is empty, i.e., there are no documents assigned to it.</p>')
                     wr('<h3>Existing Categories</h3>')

@@ -56,8 +56,10 @@ class DM_Add_Edit_Doc (Template_Authenticated):
                     ttl = 'Add a New Document'
                     subval = 'Save Changes'
 
-                wr('<h2>%s</h2>' % (ttl))
-                wr('<p>All form fields are required.</p>')
+                wr('<h1>%s</h1>' % (ttl))
+                wr('<p><a href="DM_Index" class="btn btn-default btn-sm"><i class="fa fa-arrow-left">&nbsp;</i>Document Management</a>')
+
+                wr('<p>All form fields are required (except description).</p>')
                 wr('<form method="POST" action="DM_Add_Edit_Doc" enctype="multipart/form-data">')
                 wr(hidden('formaction', hideval))
                 wr(hidden('filename', filename))
@@ -65,6 +67,7 @@ class DM_Add_Edit_Doc (Template_Authenticated):
                 wr('<table>')
                 wr('<tr><td>Title:<td>')
                 wr(text('title', pick.get('title', '')))
+                wr('<tr><td>Description:<br><small>(optional)</small><td><textarea name="description">%s</textarea>' % (pick.get('description', '')))
 
                 wr('<tr><td>Categories:<br><small>(pick at least one)</small><td>')
                 for cat in get_all_possible_categories():

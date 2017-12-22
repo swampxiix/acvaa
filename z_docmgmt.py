@@ -9,6 +9,7 @@ from z_docs import sanitize_file_name
 
 DOCS_DIR = os.path.join(BASEDIR, 'DocRepo') # was "Documents" but that caused namespace collision
 TITLES_FILE = os.path.join(DOCS_DIR, '.titles.pick')
+DESC_FILE = os.path.join(DOCS_DIR, '.descriptions.pick')
 CATEGORIES_FILE = os.path.join(DOCS_DIR, '.categories.pick')
 ACCESS_FILE = os.path.join(DOCS_DIR, '.access.pick')
 ARCHIVED_FILE = os.path.join(DOCS_DIR, '.archived.pick')
@@ -38,11 +39,17 @@ def get_all_possible_categories ():
 
 def edit_master_category (newcatname, oldcatname=None):
     p = get_all_possible_categories() or []
+    metadatapick = get_categories()
     if oldcatname:
         p = rm_fr_list(p, oldcatname)
+        if oldcatname in metadatapick.keys():
+            metadatapick[newcatname] = metadatapick[oldcatname]
+            del metadatapick[oldcatname]
+            wP(metadatapick, CATEGORIES_FILE)
     if newcatname not in p:
         p.append(newcatname)
     wP(p, MASTER_CATEGORY_LIST)
+
 
 def remove_master_category (catname):
     # Make sure you can't remove category that's not empty yet!
@@ -87,6 +94,9 @@ def save_doc_file (form):
     open(os.path.join(DOCS_DIR, filename), 'wb').write(contents)
     save_doc_title(filename, form.get('title'))
 
+    if form.get('description'): # optional
+        save_doc_description(filename, form.get('description', ''))
+
     fcat = form.get('category')
     handle_cats(filename, fcat)
 
@@ -96,6 +106,8 @@ def save_doc_file (form):
 def edit_doc_file (form):
     filename = form.get('filename')
     save_doc_title(filename, form.get('title'))
+    if form.get('description'): # optional
+        save_doc_description(filename, form.get('description', ''))
 
     fcat = form.get('category')
     handle_cats(filename, fcat)
@@ -124,6 +136,7 @@ def rm_doc_file (filename):
     fullpath = os.path.join(DOCS_DIR, filename)
     # Nuke and pave registries.
     remove_doc_title(filename)
+    remove_doc_description(filename)
     edit_doc_categories(filename, [])
     edit_doc_access(filename, [])
     activate_doc(filename)
@@ -144,6 +157,21 @@ def remove_doc_title (filename):
     if filename in p.keys():
         del p[filename]
         wP(p, TITLES_FILE)
+
+#------------------------------------------------------
+# Document description
+
+def save_doc_description (filename, description):
+    # use also for editing
+    p = rP(DESC_FILE)
+    p[filename] = description
+    wP(p, DESC_FILE)
+
+def remove_doc_description (filename):
+    p = rP(DESC_FILE)
+    if filename in p.keys():
+        del p[filename]
+        wP(p, DESC_FILE)
 
 #------------------------------------------------------
 # Document category membership
@@ -234,9 +262,14 @@ def get_access ():
 def get_titles ():
     return rP(TITLES_FILE)
 
+def get_descriptions ():
+    return rP(DESC_FILE)
+
 def get_document_properties (filename):
     filename_title_dict = get_titles()
-    title = filename_title_dict.get(filename)   
+    title = filename_title_dict.get(filename)
+    filename_desc_dict = get_descriptions()
+    desc = filename_desc_dict.get(filename, '')
     cat_filelist_dict = get_categories()
     my_cats = []
     for C in cat_filelist_dict.keys():
@@ -250,7 +283,7 @@ def get_document_properties (filename):
         if filename in filelist:
             my_rols.append(R)
     arch = get_archived()
-    final = {'title': title, 'categories': my_cats, 'roles': my_rols, 'is_archived': filename in arch}
+    final = {'description': desc, 'title': title, 'categories': my_cats, 'roles': my_rols, 'is_archived': filename in arch}
     return final
 
 ######################################################
@@ -325,13 +358,24 @@ def do_archived_docs_exist (role):
         EXIST = True
     return EXIST
 
+def group_docs_by_category (docslist):
+    BY_CAT_DICT = {}
+    for doctitle, docfile in docslist:
+        pick = get_document_properties(docfile)
+        cats = pick.get('categories', [])
+        for cat in cats:
+            if cat not in BY_CAT_DICT.keys():
+                BY_CAT_DICT[cat] = []
+            BY_CAT_DICT[cat].append( (doctitle, docfile) )
+    return BY_CAT_DICT
 
 
 
 
 
 
-
+#{'description': desc, 'title': title, 
+#'categories': my_cats, 'roles': my_rols, 'is_archived': filename in arch}
 
 
 
