@@ -12,6 +12,22 @@ class Index (Template_Main):
         rolestr = self.request().cookies().get('role', '')
         IS_RES = rolestr == RESDSTR
         IS_DIP = rolestr == DIPLSTR
+        wr('''
+<div class="sb"><div class="st">
+<div class="t12b">Pay Dues Here</div>
+
+<p>
+You can pay dues with your credit card using PayPal.
+</p>
+
+<P>
+<b>PayPal</b>
+<br>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=37LAHDVSLLY78" title="Pay ACVAA Dues Now"><img src="/g/btn_payduesCC_LG.png" alt="Pay ACVAA Dues Now" width="171" height="47" border="0"></a>
+</P>
+
+</div></div>
+            ''')
 
         wr('<P class="t14serif">The American College of Veterinary Anesthesia and Analgesia was founded in 1975 to promote the advancement of veterinary anesthesiology and to assist the veterinary profession in providing exceptional service to all animals.</P>')
 
