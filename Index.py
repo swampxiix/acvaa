@@ -14,16 +14,13 @@ class Index (Template_Main):
         IS_DIP = rolestr == DIPLSTR
         wr('''
 <div class="sb"><div class="st">
-<div class="t12b">Pay Dues Here</div>
+<div class="t12b">Payments</div>
 
 <p>
-You can pay dues with your credit card using PayPal.
+You can pay for dues, exam fees and more with your credit card using PayPal.
 </p>
-
 <P>
-<b>PayPal</b>
-<br>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=37LAHDVSLLY78" title="Pay ACVAA Dues Now"><img src="/g/btn_payduesCC_LG.png" alt="Pay ACVAA Dues Now" width="171" height="47" border="0"></a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=37LAHDVSLLY78" title="Make a Payment"><img src="/g/btn_payduesCC_LG.png" alt="Pay ACVAA Dues Now" width="171" height="47" border="0"></a>
 </P>
 
 </div></div>
