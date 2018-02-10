@@ -20,7 +20,12 @@ You can pay dues with your credit card using PayPal.
 <P>
 <b>PayPal</b>
 <br>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=37LAHDVSLLY78" title="Pay ACVAA Dues Now"><img src="/g/btn_payduesCC_LG.png" alt="Pay ACVAA Dues Now" width="171" height="47" border="0"></a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NDCABTKMY694A">
+<input type="image" src="http://www.acvaa.org/g/btn_payduesCC_LG.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
 </P>
 
 </div></div>
