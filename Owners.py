@@ -33,7 +33,7 @@ Choosing Specialty Anesthetic Care for Your Pet
 Surgical risk and anesthetic risk are different. Some patients have a higher anesthetic risk due to their body size, age, or physical condition even though the surgical risk for a procedure may be minimal.  In contrast, certain surgical and diagnostic procedures carry an increased anesthetic risk in all patients due to the nature of the procedure.
 </P>
 <P>
-In some hospitals, you may request that a Board Certified Veterinary Anesthesiologist anesthetize your pet. They will provide the highest possible standard of care available for your pet. 
+In some hospitals, you may request that a Board Certified Specialist in Veterinary Anesthesia and Analgesia anesthetize your pet. They will provide the highest possible standard of care available for your pet. 
 </P>
 <P>
 The anesthesiologist's main task is to provide safe, optimal anesthesia, specifically tailored to your pet. They are trained to anticipate, recognize, and care for any concerns associated with anesthesia. The anesthesiologist will monitor your pet thoroughly during surgery and throughout anesthetic recovery. They will be constantly on guard for changes in breathing, heart function, blood pressure and any other complication that may occur. The anesthesiologist's sole responsibility is the safety of your pet during anesthesia.   

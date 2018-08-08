@@ -33,7 +33,7 @@ You can pay for dues, exam fees and more with your credit card using PayPal.
 
         wr('<P class="t14serif">The American College of Veterinary Anesthesia and Analgesia was founded in 1975 to promote the advancement of veterinary anesthesiology and to assist the veterinary profession in providing exceptional service to all animals.</P>')
 
-        wr('<P>The ACVAA is currently composed of over 220 members who practice veterinary anesthesia across the globe.</P>')
+        wr('<P>The ACVAA is currently composed of over 220 Board Certified Specialists in Veterinary Anesthesia and Analgesia who practice veterinary anesthesia across the globe.</P>')
 
         wr('<P>The goals of the ACVAA include establishing, evaluating and maintaining the highest standards in the practice of veterinary anesthesiology by promoting the establishment of educational facilities and clinical and research training in veterinary anesthesiology. Additionally, the ACVAA establishes the criteria of fitness for the designation of a specialist in the practice of veterinary anesthesiology.</P>')
 
